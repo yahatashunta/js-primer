@@ -168,6 +168,8 @@ rules:
     patterns: 常体で
   - expected: する場合は
     patterns: する倍は
+  - expected: 疎な配列
+    patterns: 疎の配列
 # 文体
   - expected: どのように
     patterns:
