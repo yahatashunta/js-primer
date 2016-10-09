@@ -9,6 +9,7 @@
     }
   },
   "rules": {
+    "no-empty-section": true,
     "preset-ja-technical-writing": {
       "no-exclamation-question-mark": {
         "allowFullWidthQuestion": true
