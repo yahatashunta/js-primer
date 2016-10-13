@@ -2,8 +2,7 @@
 author: azu
 ---
 
-
-# Arrayパターン
+# Array
 
 ## 配列の作成
 
@@ -16,7 +15,7 @@ var array = [1, 2, 3]; // 値をもった配列を作成
 ```
 
 Arrayオブジェクトを`new`演算子でインスタンス化する方法は基本的には使いません。
-こちらは配列リテラルとは異なり、初期値ではなく配列の長さを指定し、疎な配列を作ります。
+こちらは配列リテラルとは異なり、初期値ではなく配列の長さを指定し、**疎な配列**を作ります。
 
 疎な配列とは、配列の要素が空となっているもので、隙間を持った配列のことを言います。
 
@@ -33,8 +32,53 @@ console.log(array.hasOwnProperty(0));// => false
 バイナリデータを扱うようなパフォーマンスが求められるケースは、
 `Array`（配列）ではなく`TypedArray`（型付き配列）を利用します。
 
-`Array`（配列）と`TypedArray`（型付き配列）はAPIは似ていますが、
+`Array`（配列）と`TypedArray`（型付き配列）は似ていますが、
 基本的に異なる目的を持ったものなので、ここでは`Array`（配列）についてを扱います。
+
+
+## 配列の要素を削除する
+
+delete演算子で配列の要素を削除することができますが、
+注意点としては値を消すだけで、消した値を詰めるような処理は行いません。
+つまり、`delete`した結果として疎な配列ができあがります。
+
+次のように、`length`が`3`の配列の1番目の要素を消しても、
+`length`は`3`のままとなります。
+`delete`演算子では、自動的に削除された配列の要素を詰めません。
+
+```js
+var array = [1, 2, 3];
+console.log(array.length); // => 3
+delete array[1];
+console.log(array); // => [1, , 3]
+console.log(array.length); // => 3
+```
+
+一方、`Array#splice`メソッドを利用すると、削除した要素を自動で詰めることができます。
+`Array#splice`メソッドは、`index`番目から`削除する数`だけ要素を取り除き、必要ならば要素を同時に追加できます。
+
+    array.splice(index, 削除する数, [追加する要素][, ..., 追加する要素]);
+
+つまり、配列の1番目の要素を削除するには、1番目から1つの要素を削除するという指定をする必要があります。
+このとき、削除した要素は自動で詰められるため、疎な配列にはなりません。
+
+```js
+var array = [1, 2, 3];
+console.log(array.length); // => 3
+array.splice(1, 1);
+console.log(array); // => [1, 3]
+console.log(array.length); // => 2
+```
+
+この`Array#splice`メソッドをImmutableにする場合は結構小難しい書き方になります。
+
+```js
+function immutableSplice(arr, start, deleteCount, ...items) {
+    return [...arr.slice(0, start), ...items, ...arr.slice(start + deleteCount)];
+}
+```
+
+- [Pure javascript immutable arrays](http://vincent.billey.me/pure-javascript-immutable-array "Pure javascript immutable arrays")
 
 ## Arrayの要素を全削除
 
@@ -52,8 +96,6 @@ console.log(array[0] === undefined); // => true
 
 `Array#splice`やそもそもその要素を削除するひつようがないなら、空の配列で変数を上書きするでもよいはずです。
 
-次の２つは`array`という変数を参照の値を渡しているものがあるかで意味が違いますが、そうでないならどちらもよいかもしれません。
-
 ```js
 var array = [1, 2, 3];
 array = [];
@@ -61,9 +103,56 @@ array = [];
 array.length = 0;
 ```
 
+次の２つは`array`という変数を参照の値を渡しているものがあるかで意味が異なります。
+次のように`length`を変更した場合は、コールバック関数に渡した配列も影響を受けます。
+
+```js
+function doSomething(callbck) {
+    var array = [];
+    callback(array);
+    // array = [];
+    // or
+    // array.length = 0;
+}
+
+doSomething((array) => {
+    console.log(array);
+});
+```
+
+## 配列は参照型
+
+配列はプリミティブな値ではなくオブジェクトなので、変数に入れると参照型の値になります。
+次にように、配列を参照する`a`という変数の値を`b`に代入しても、`b`には配列の参照が入るだけです。
+そのため、`a`に変更を加えると、`b`も同じ配列を参照しているため影響を受けます。
+
+```js
+var a = [1, 2, 3];
+var b = a;
+a.push(4);
+console.log(b); // => [1, 2, 3, 4]
+```
+
+一方、プリミティブな値である文字列では、`b`に`a`を代入する際に`a`の値がコピーされます。
+つまり、変数`a`に変更を加えても、コピーされた値をもつ変数`b`は影響を受けません。
+
+```js
+var a = "string";
+var b = a;
+a = a + "!";
+console.log(b); // => "string"
+```
+
+StringやNumberなどのプリミティブな値は、作成後に値そのものの状態は変更できません。
+このような特性をもつものをImmutableと呼び、StringなどはImmutableです。
+
+一方、ArrayやObjectなどのプリミティブな値でないものは、作った後も状態を変更できるためMutableと呼ばれます。
+
+詳しくは[データ型とリテラル · JavaScriptの入門書 #jsprimer](https://asciidwango.github.io/js-primer/basic/data-type/ "データ型とリテラル · JavaScriptの入門書 #jsprimer")を参照してください。
+
 ## Arrayのコピー
 
-Shallow copyの流派concatとsliceがある。
+配列をshallow copyする流派としてconcatとsliceがあります。
 
 ```js
 var array = [1, 2, 3];
@@ -73,6 +162,25 @@ console.log(array !== copyC); // => true
 console.log(array !== copyS); // => true
 console.log(copyC !== copyS); // => true
 ```
+
+- http://www.ecma-international.org/ecma-262/7.0/#sec-array.prototype.concat
+- http://www.ecma-international.org/ecma-262/7.0/#sec-array.prototype.slice
+
+`Array#concat`メソッドと`Array#slice`メソッドは意図して配列以外を`this`として指定できるようになっています。
+そのため、Array-likeなオブジェクトを`this`にして、配列にする方法としても利用されています。
+
+```js
+Array.prototype.slice.call(document.querySelectorAll("div"));
+```
+
+しかし、ES2015からは`Array.from`メソッドという、Array-likeを配列にする適切なメソッドがあります。
+あとで詳しく解説しますが、`Array.from`メソッドのほうが直感的なのでこちらを利用して変換した方がよいです。
+
+```js
+Array.from(document.querySelectorAll("div"));
+```
+
+- http://www.ecma-international.org/ecma-262/7.0/#sec-array.from
 
 ## 配列の末尾に要素を追加
 
@@ -94,6 +202,7 @@ console.log(newArray); // => [1, 2, 3, 4]
 ```
 
 もちろん`Array#slice`などでコピーした配列にpushするでも問題ありません。
+
 ```js
 var array = [1, 2, 3];
 var newArray = array.slice();
@@ -103,45 +212,11 @@ console.log(newArray); // => [1, 2, 3, 4]
 
 先頭に要素を追加する場合も、`Array#push`が`Array#unshift`に変わるだけで同じです。
 
-## 配列の要素を削除する
-
-delete演算子で配列の要素を削除することができますが、
-注意点として、deleteは値を消すだけで、空いた値を詰めることはします。
-つまり、`delete`した結果として疎な配列ができあがります。
-
-次のように、`length`が`3`の配列の1番目の要素を消しても、
-`length`は`3`のままとなります。
-`delete`演算子では、自動的に削除された配列の要素を詰めません。
-
-```js
-var array = [1, 2, 3]
-console.log(array.length); // => 3
-delete array[1];
-console.log(array); // => [1, , 3]
-console.log(array.length); // => 3
-```
-
-一方、`Array#splice`メソッドを利用すると、削除した要素を自動で詰めることができます。
-`Array#splice`メソッドは、`index`番目から`削除する数`だけ要素を取り除き、必要ならば要素を同時に追加できます。
-
-    array.splice(index, 削除する数, [追加する要素][, ..., 追加する要素]);
-
-つまり、配列の1番目の要素を削除するには、1番目から1つの要素を削除するという指定をする必要があります。
-この時、削除した要素は
-
-```js
-var array = [1, 2, 3]
-console.log(array.length); // => 3
-array.splice(1, 1);
-console.log(array); // => [1, 3]
-console.log(array.length); // => 2
-```
-
-## new Array join
+## new Array + fill
 
 `new Array(len)` で指定した`length`の**疎な配列**を作ることができます。
 しかし、この配列の要素は`undefined`が値として入っているわけではありません。
-単純に何も入ってないから `array[0]` とした時にプロパティがないため `undefined`が返ってきているだけです。
+単純に `array[0]` にはキーそのものがないため、 `undefined`が返ってきています。
 
 ```js
 var array = new Array(10);
@@ -152,6 +227,17 @@ var a = [undefined];
 var b = new Array(1);
 console.log(a.hasOwnProperty(0)); // => true
 console.log(b.hasOwnProperty(0)); // => false
+```
+
+配列もオブジェクトであるため、疎な配列は次のようなオブジェクトであるといえます。
+
+```js
+// new Array(10)
+var array = {
+    length: 10,
+    __proto__: Array.prototype
+};
+array[0]; // => undefined
 ```
 
 これにより`new Array`では配列中の値がないので`Array#map`などが意図した挙動にはなりません
@@ -181,16 +267,16 @@ console.log(array[9] === 9);// => true
 - [Array.from() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/from "Array.from() - JavaScript | MDN")
 
 先ほどの`new Array`で作った疎な配列もlengthは持っているので、for文などで走査することはできます。
-`Array.from`は、`arguments`のようなArray-likeや疎な配列も、意図したように列挙できる`Array#map`のような仕組みを持っています。
+`Array.from`は、`arguments`のようなArray-likeや疎な配列も列挙でき かつ `Array#map`のような仕組みを持っています。
 
 ```js
-var array = Array.from(new Array(10), (item. index) => {
-  return index
+var array = Array.from(new Array(10), (item, index) => {
+    return index;
 });
 console.log(array[9] === 9);// => true
 ```
 
-他にも、Iterableを配列にできるので、Mapなどを配列にしたい場合に使えます。
+他にも、Iterableを配列にできるので、Mapオブジェクトを配列へ変換するときにも利用できます。
 
 ```js
 var map = new Map([[1, 2], [2, 4], [4, 8]]);
@@ -202,18 +288,18 @@ console.log(Array.from(map));// => [[1, 2], [2, 4], [4, 8]]
 
 ```js
 var map = new Map([[1, 2], [2, 4], [4, 8]]);
-console.log(...map);// => [[1, 2], [2, 4], [4, 8]]
+console.log([...map]);// => [[1, 2], [2, 4], [4, 8]]
 ```
 
 ## flatten
 
-配列の配列を、配列にfattenしたというケース。
+配列の入れ子をflattenにしたいというケース。
 
 `[[1], [2], [3]]` => `[1, 2, 3]`
 
 concatを使った方法が有名です。
 
-shallowなflattenをします・。
+`Array#concat`を使った方法ではshallowなflattenを行えます。
 
 ```js
 function flatten(array) {
@@ -223,7 +309,8 @@ var array = [[1], [2], [3]];
 flatten(array); // => [1, 2, 3]
 ```
 
-再帰的にやることでdeepなflattenをします。
+再帰的にやることでdeepなflattenができます。
+もう1つのflattenを行う方法として、`...` spread operatorで配列を展開してしまう方法です。
 
 ```js
 function flatten(array) {
@@ -235,11 +322,11 @@ var array = [[1], [2], [3]];
 flatten(array); // => [1, 2, 3]
 ```
 
-[Array.prototype.flatMap & Array.prototype.flatten](https://bterlson.github.io/proposal-flatMap/ "Array.prototype.flatMap &amp; Array.prototype.flatten") ProposalはStage 1なので今後入るかもしれません。
+[Array.prototype.flatMap & Array.prototype.flatten](https://bterlson.github.io/proposal-flatMap/ "Array.prototype.flatMap &amp; Array.prototype.flatten") ProposalはStage 1なので、将来`Array#flatten`メソッドが利用できる可能性もあります。
 
 ## entriesで何か
 
-オブジェクをループ時に key と value のどちらも必要な場合は、`Object.values`メソッドを利用すると簡単です。
+オブジェクをループ時に key と value のどちらも必要な場合は、`Object.entries`メソッドを利用すると簡単です。
 
 ```js
 var object = {
@@ -252,8 +339,7 @@ var keyValues = Object.entries(object).map(([key, value]) => {
 console.log(keyValues); // => ["key1:value1", "key2:value2"];
 ```
 
-
-## values?
+keyだけなら`Object.keys`メソッド、valueだけなら`Object.values`メソッドが利用できます。
 
 ## indexOf => findIndex
 
@@ -267,6 +353,7 @@ console.log(index); // => -1
 ```
 
 代わりにES2015からは`Array#findIndex` が利用できます。
+
 ```js
 var array = [{ id: 1 }, { id: 2}];
 var index = array.findIndex(item => item.id === 1);
@@ -302,7 +389,7 @@ console.log(containB); // => true
 ```js
 var array = ["a", "b", "c"];
 var target = "b";
-var containB = array.indexOf(target) !=== -1;
+var containB = array.indexOf(target) !== -1;
 console.log(containB); // => true
 ```
 
@@ -359,10 +446,10 @@ function sortByKey(array, key) {
         if (x > y) {
             return 1;
         } else if (x < y) {
-           return -1;
-       } else {
-           return 0;
-       }
+            return -1;
+        } else {
+            return 0;
+        }
     });
 }
 ```
@@ -378,10 +465,10 @@ function sortByKey(array, key) {
         if (x > y) {
             return -1;
         } else if (x < y) {
-           return 1;
-       } else {
-           return 0;
-       }
+            return 1;
+        } else {
+            return 0;
+        }
     });
 }
 var array = [{ "key": 2 }, { "key": 1 }];
@@ -392,7 +479,7 @@ console.log(first === array[0]); // => true
 
 ## join
 
-配列を文字列にする方法は様々な方法があります。
+配列を文字列にする方法はさまざまな方法があります。
 単純な方法としては、`Array#join`メソッドを利用することです。
 
 ```js
@@ -407,3 +494,24 @@ var array = [1, 2, 3];
 var string = array.join();
 console.lg(string);// => "1,2,3"
 ```
+
+## ループと反復処理
+
+`Array#map`メソッドなどのループと反復処理については[ループと反復処理 · JavaScriptの入門書 #jsprimer](https://asciidwango.github.io/js-primer/basic/loop/ "ループと反復処理 · JavaScriptの入門書 #jsprimer")を参照してください。
+
+## 空の配列を返す
+
+配列を返すAPIは、返す値がないときも空の配列を返すようにします。
+
+```js
+function getSomeList() {
+    if (返すものがないとき) {
+        return [];
+    }
+    // 返すものがあるとき
+}
+```
+
+こうすることで、このAPIを利用する側はnullチェックをしなくても良くなります。
+`null`や`undefined`を返してしまうと、このAPIを使うたびに`null`チェックが必要となります。
+`null`チェックが不要ならば不要な形にした方がよいはずです。
