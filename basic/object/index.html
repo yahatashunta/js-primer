@@ -1,0 +1,1433 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>オブジェクト · JavaScriptの入門書 #jsprimer</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../array/" />
+    
+    
+    <link rel="prev" href="../implicit-coercion/" />
+    
+
+    <link rel="canonical" href="https://asciidwango.github.io/js-primer/basic/object/">
+
+<style>
+    /* deny access chapter */
+    .summary li.chapter > span {
+        cursor: not-allowed;
+        opacity: .3;
+    }
+
+    /* console ui */
+    .mirror-console-attach-button-wrapper {
+        margin-top: -1.275em;
+        margin-bottom: 1.275em
+    }
+
+    .mirror-console-wrapper {
+        margin-top: 1.275em;
+        margin-bottom: 1.275em
+    }
+</style>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    本書の読み方
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../intro/goal/">
+            
+                <a href="../../intro/goal/">
+            
+                    
+                    本書の目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    第1部: 基礎文法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    JavaScriptとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../comments/">
+            
+                <a href="../comments/">
+            
+                    
+                    コメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../variables/">
+            
+                <a href="../variables/">
+            
+                    
+                    変数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../read-eval-print/">
+            
+                <a href="../read-eval-print/">
+            
+                    
+                    値の評価と表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../data-type/">
+            
+                <a href="../data-type/">
+            
+                    
+                    データ型とリテラル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../function-method/">
+            
+                <a href="../function-method/">
+            
+                    
+                    関数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../statement-expression/">
+            
+                <a href="../statement-expression/">
+            
+                    
+                    文と式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../condition/">
+            
+                <a href="../condition/">
+            
+                    
+                    条件分岐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../loop/">
+            
+                <a href="../loop/">
+            
+                    
+                    ループと反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../operator/">
+            
+                <a href="../operator/">
+            
+                    
+                    演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../implicit-coercion/">
+            
+                <a href="../implicit-coercion/">
+            
+                    
+                    暗黙的な型変換
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.12" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../array/">
+            
+                <a href="../array/">
+            
+                    
+                    配列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../string/">
+            
+                <a href="../string/">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" >
+            
+                <span>
+            
+                    
+                    Number/Math
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../wrapper-object/">
+            
+                <a href="../wrapper-object/">
+            
+                    
+                    ラッパーオブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" >
+            
+                <span>
+            
+                    
+                    関数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" >
+            
+                <span>
+            
+                    
+                    スコープ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" >
+            
+                <span>
+            
+                    
+                    Arrow Function
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" >
+            
+                <span>
+            
+                    
+                    分割代入（Destructuring assignment）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" >
+            
+                <span>
+            
+                    
+                    Spread Operator
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" >
+            
+                <span>
+            
+                    
+                    クラス
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" >
+            
+                <span>
+            
+                    
+                    Error/Throw
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" >
+            
+                <span>
+            
+                    
+                    Promise
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" >
+            
+                <span>
+            
+                    
+                    Generator/Iterable/Iterator
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" >
+            
+                <span>
+            
+                    
+                    ビルトインオブジェクト
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.22.1" data-path="../json/">
+            
+                <a href="../json/">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.2" >
+            
+                <span>
+            
+                    
+                    Date
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.3" >
+            
+                <span>
+            
+                    
+                    Map/WeakMap
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.4" >
+            
+                <span>
+            
+                    
+                    Set/WeakSet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.5" >
+            
+                <span>
+            
+                    
+                    Symbol
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" >
+            
+                <span>
+            
+                    
+                    Proxy/Reflect API
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" >
+            
+                <span>
+            
+                    
+                    非推奨の機能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" >
+            
+                <span>
+            
+                    
+                    ECMAScript策定プロセス
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../use-case/">
+            
+                <a href="../../use-case/">
+            
+                    
+                    第2部: 応用編（ユースケース）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../use-case/ajaxapp/">
+            
+                <a href="../../use-case/ajaxapp/">
+            
+                    
+                    Ajaxで通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../use-case/ajaxapp/entrypoint/">
+            
+                <a href="../../use-case/ajaxapp/entrypoint/">
+            
+                    
+                    エントリポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../use-case/ajaxapp/xhr/">
+            
+                <a href="../../use-case/ajaxapp/xhr/">
+            
+                    
+                    HTTP通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../use-case/ajaxapp/display/">
+            
+                <a href="../../use-case/ajaxapp/display/">
+            
+                    
+                    データを表示する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../../use-case/ajaxapp/promise/">
+            
+                <a href="../../use-case/ajaxapp/promise/">
+            
+                    
+                    Promiseを活用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../use-case/nodecli/">
+            
+                <a href="../../use-case/nodecli/">
+            
+                    
+                    Node.jsでCLIアプリ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../use-case/nodecli/helloworld/">
+            
+                <a href="../../use-case/nodecli/helloworld/">
+            
+                    
+                    Node.jsでHello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../use-case/nodecli/argument-parse/">
+            
+                <a href="../../use-case/nodecli/argument-parse/">
+            
+                    
+                    コマンドライン引数を処理する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../use-case/nodecli/read-file/">
+            
+                <a href="../../use-case/nodecli/read-file/">
+            
+                    
+                    ファイルを読み込む
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../../use-case/nodecli/md-to-html/">
+            
+                <a href="../../use-case/nodecli/md-to-html/">
+            
+                    
+                    MarkdownをHTMLに変換する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../../use-case/nodecli/refactor-and-unittest/">
+            
+                <a href="../../use-case/nodecli/refactor-and-unittest/">
+            
+                    
+                    ユニットテストを記述する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    TODOアプリ
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >オブジェクト</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;"><a name="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;" class="plugin-anchor" href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</h1>
+<h2 id="what-is-object"><a name="what-is-object" class="plugin-anchor" href="#what-is-object"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3068;&#x306F; </h2>
+<p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x96C6;&#x5408;&#x3067;&#x3059;&#x3002;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3068;&#x306F;&#x30AD;&#x30FC;&#xFF08;&#x540D;&#x524D;&#xFF09;&#x3068;&#x5024;&#x304B;&#x3089;&#x69CB;&#x6210;&#x3055;&#x308C;&#x308B;&#x3082;&#x306E;&#x3092;&#x8A00;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x30AD;&#x30FC;&#x306B;&#x306F;&#x6587;&#x5B57;&#x5217;&#x307E;&#x305F;&#x306F;Symbol&#x304C;&#x5229;&#x7528;&#x3067;&#x304D;&#x3001;&#x5024;&#x306B;&#x306F;&#x4EFB;&#x610F;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#xFF08;<code>{}</code>&#xFF09;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x304C;&#x7C21;&#x5358;&#x3067;&#x3059;&#x3002;
+&#x307E;&#x305F;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x306F;&#x30AF;&#x30AA;&#x30FC;&#x30C8;&#xFF08;<code>&quot;</code>&#x3084;<code>&apos;</code>&#xFF09;&#x3092;&#x7701;&#x7565;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x306F;&#x30AF;&#x30AA;&#x30FC;&#x30C8;&#x3092;&#x7701;&#x7565;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;</span>
+<span class="hljs-keyword">const</span> object = {
+    key: <span class="hljs-string">&quot;value&quot;</span>
+};
+</code></pre>
+<p>&#x307E;&#x305F;ES2015&#x304B;&#x3089;&#x306F;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3068;&#x5024;&#x3068;&#x306A;&#x308B;&#x5909;&#x6570;&#x540D;&#x304C;&#x540C;&#x3058;&#x5834;&#x5408;&#x306F;<code>{ name }</code>&#x306E;&#x3088;&#x3046;&#x306B;&#x7701;&#x7565;&#x3057;&#x3066;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;&#x540D;&#x524D;&quot;</span>;
+<span class="hljs-comment">// `name`&#x3068;&#x3044;&#x3046;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3067;`name`&#x306E;&#x5909;&#x6570;&#x3092;&#x5024;&#x306B;&#x8A2D;&#x5B9A;</span>
+<span class="hljs-keyword">const</span> objectA = {
+    name
+};
+<span class="hljs-comment">// &#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3044;&#x305F;&#x5834;&#x5408;&#x3068;&#x540C;&#x3058;</span>
+<span class="hljs-keyword">const</span> objectB = {
+    name: name
+};
+</code></pre>
+<p>&#x3053;&#x306E;&#x7701;&#x7565;&#x8A18;&#x6CD5;&#x306F;&#x3001;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3084;&#x5206;&#x5272;&#x4EE3;&#x5165;&#x306B;&#x304A;&#x3044;&#x3066;&#x3082;&#x5171;&#x901A;&#x3057;&#x305F;&#x8868;&#x73FE;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>{}</code>&#x306E;&#x4E2D;&#x3067;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x304C;&#x5358;&#x72EC;&#x3067;&#x66F8;&#x304B;&#x308C;&#x3066;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x3053;&#x306E;&#x7701;&#x7565;&#x8A18;&#x6CD5;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<h2 id="property-access"><a name="property-access" class="plugin-anchor" href="#property-access"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9; </h2>
+<p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3068;&#x3057;&#x3066;&#x3001;&#x30C9;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#xFF08;<code>.</code>&#xFF09;&#x3092;&#x4F7F;&#x3046;&#x65B9;&#x6CD5;&#x3068;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#xFF08;<code>[]</code>&#xFF09;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = {
+    key: <span class="hljs-string">&quot;value&quot;</span>
+};
+<span class="hljs-comment">// &#x30C9;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3067;&#x53C2;&#x7167;</span>
+<span class="hljs-built_in">console</span>.log(object.key); <span class="hljs-comment">// =&gt; &quot;value&quot;</span>
+<span class="hljs-comment">// &#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3067;&#x53C2;&#x7167;</span>
+<span class="hljs-built_in">console</span>.log(object[<span class="hljs-string">&quot;key&quot;</span>]); <span class="hljs-comment">// =&gt; &quot;value&quot;</span>
+</code></pre>
+<p>&#x30C9;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#xFF08;<code>.</code>&#xFF09;&#x3067;&#x306F;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x304C;&#x5909;&#x6570;&#x540D;&#x3068;&#x540C;&#x3058;&#x304F;&#x8B58;&#x5225;&#x5B50;&#x306E;&#x547D;&#x540D;&#x898F;&#x5247;&#x3092;&#x6E80;&#x305F;&#x3059;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#xFF08;&#x300C;<a href="../variables/" title="&#x5909;&#x6570;&#x3068;&#x5BA3;&#x8A00;">&#x5909;&#x6570;&#x3068;&#x5BA3;&#x8A00;</a>&#x300D;&#x3092;&#x53C2;&#x7167;&#xFF09;</p>
+<pre><code class="lang-javascript">object.key; <span class="hljs-comment">// OK!</span>
+<span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x304C;&#x6570;&#x5B57;&#x304B;&#x3089;&#x59CB;&#x307E;&#x308B;&#x8B58;&#x5225;&#x5B50;&#x306F;&#x5229;&#x7528;&#x3067;&#x304D;&#x306A;&#x3044;</span>
+object<span class="hljs-number">.123</span>; <span class="hljs-comment">// NG!</span>
+</code></pre>
+<p>&#x4E00;&#x65B9;&#x3001;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3067;&#x306F;&#x3001;<code>[</code>&#x3068;<code>]</code>&#x306E;&#x9593;&#x306B;&#x4EFB;&#x610F;&#x306E;&#x5F0F;&#x3092;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x5F0F;&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x306E;&#x6587;&#x5B57;&#x5217;&#x3092;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3068;&#x3057;&#x3066;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3067;&#x306F;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x306B;&#x4EFB;&#x610F;&#x306E;&#x6587;&#x5B57;&#x5217;&#x3084;&#x5909;&#x6570;&#x3092;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = {
+    <span class="hljs-string">&quot;ja&quot;</span>: <span class="hljs-string">&quot;&#x65E5;&#x672C;&#x8A9E;&quot;</span>,
+    <span class="hljs-string">&quot;en&quot;</span>: <span class="hljs-string">&quot;&#x82F1;&#x8A9E;&quot;</span>
+};
+<span class="hljs-keyword">const</span> myLang = <span class="hljs-string">&quot;ja&quot;</span>;
+<span class="hljs-built_in">console</span>.log(object[myLang]); <span class="hljs-comment">// =&gt; &quot;&#x65E5;&#x672C;&#x8A9E;&quot;</span>
+</code></pre>
+<p>&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x30C9;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#xFF08;<code>.</code>&#xFF09;&#x3092;&#x4F7F;&#x3044;&#x3001;&#x30C9;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3067;&#x66F8;&#x3051;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#xFF08;<code>[]</code>&#xFF09;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3088;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="property-created"><a name="property-created" class="plugin-anchor" href="#property-created"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x4F5C;&#x6210; </h2>
+<p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3001;&#x4E00;&#x5EA6;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x5F8C;&#x3082;&#x305D;&#x306E;&#x5024;&#x81EA;&#x4F53;&#x3092;&#x5909;&#x66F4;&#x3067;&#x304D;&#x308B;&#x305F;&#x3081;&#x30DF;&#x30E5;&#x30FC;&#x30BF;&#x30D6;&#x30EB;&#xFF08;mutable&#xFF09;&#x306E;&#x7279;&#x6027;&#x3092;&#x6301;&#x3061;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;&#x5F8C;&#x304B;&#x3089;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x8FFD;&#x52A0;&#x65B9;&#x6CD5;&#x306F;&#x5358;&#x7D14;&#x3067;&#x3001;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x3044;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3078;&#x5024;&#x3092;&#x4EE3;&#x5165;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x3068;&#x304D;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x306A;&#x3089;&#x3001;&#x81EA;&#x52D5;&#x7684;&#x306B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x4F5C;&#x6210;&#x306F;&#x30C9;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3001;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3069;&#x3061;&#x3089;&#x3067;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x7A7A;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</span>
+<span class="hljs-keyword">const</span> object = {};
+<span class="hljs-comment">// `key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x5024;&#x3092;&#x4EE3;&#x5165;</span>
+object.key = <span class="hljs-string">&quot;value&quot;</span>;
+<span class="hljs-built_in">console</span>.log(object.key); <span class="hljs-comment">// =&gt; &quot;value&quot;</span>
+</code></pre>
+<p>&#x5148;&#x307B;&#x3069;&#x3082;&#x7D39;&#x4ECB;&#x3057;&#x305F;&#x3088;&#x3046;&#x306B;&#x3001;&#x30C9;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x306F;&#x5909;&#x6570;&#x306E;&#x8B58;&#x5225;&#x5B50;&#x3068;&#x3057;&#x3066;&#x5229;&#x7528;&#x53EF;&#x80FD;&#x306A;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3057;&#x304B;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x4E00;&#x65B9;&#x3001;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x306F;<code>object[&#x5F0F;]</code>&#x306E;<code>&#x5F0F;</code>&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x3092;&#x6587;&#x5B57;&#x5217;&#x306B;&#x3057;&#x305F;&#x3082;&#x306E;&#x3092;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3068;&#x3057;&#x3066;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x6B21;&#x306E;&#x3082;&#x306E;&#x3092;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3068;&#x3057;&#x3066;&#x6271;&#x3046;&#x5834;&#x5408;&#x306B;&#x306F;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x5909;&#x6570;</li>
+<li>&#x8B58;&#x5225;&#x5B50;&#x3068;&#x3057;&#x3066;&#x66F8;&#x3051;&#x306A;&#x3044;&#x6587;&#x5B57;&#x5217;</li>
+<li>Symbol</li>
+</ul>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> key = <span class="hljs-string">&quot;key-string&quot;</span>;
+<span class="hljs-keyword">const</span> object = {};
+<span class="hljs-comment">// `key`&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C; &quot;key-string&quot; &#x3092;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x306B;&#x5229;&#x7528;</span>
+object[key] = <span class="hljs-string">&quot;value of key&quot;</span>;
+<span class="hljs-comment">// &#x53D6;&#x308A;&#x51FA;&#x3059;&#x3068;&#x304D;&#x3082;&#x540C;&#x3058;&#x304F;`key`&#x5909;&#x6570;&#x3092;&#x5229;&#x7528;</span>
+<span class="hljs-built_in">console</span>.log(object[key]); <span class="hljs-comment">// =&gt; &quot;value of key&quot;</span>
+<span class="hljs-comment">// Symbol&#x306F;&#x4F8B;&#x5916;&#x7684;&#x306B;&#x6587;&#x5B57;&#x5217;&#x5316;&#x3055;&#x308C;&#x305A;&#x6271;&#x3048;&#x308B;</span>
+<span class="hljs-keyword">const</span> symbolKey = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&quot;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x306F;&#x4E00;&#x610F;&#x306A;&#x5024;&quot;</span>);
+object[symbolKey] = <span class="hljs-string">&quot;value of symbol&quot;</span>;
+<span class="hljs-built_in">console</span>.log(object[symbolKey]); <span class="hljs-comment">// =&gt; &quot;value of symbol&quot;</span>
+</code></pre>
+<p>&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3092;&#x7528;&#x3044;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x5B9A;&#x7FA9;&#x306F;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x306E;&#x4E2D;&#x3067;&#x3082;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x5185;&#x3067;&#x306E;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x306F;<strong>Computed property names</strong>&#x3068;&#x547C;&#x3070;&#x308C;&#x307E;&#x3059;&#x3002;
+Computed property names&#x306F;ES2015&#x304B;&#x3089;&#x5C0E;&#x5165;&#x3055;&#x308C;&#x305F;&#x8A18;&#x6CD5;&#x3067;&#x3059;&#x304C;&#x3001;<code>&#x5F0F;</code>&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x3092;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x306B;&#x4F7F;&#x3046;&#x70B9;&#x306F;&#x30D6;&#x30E9;&#x30B1;&#x30C3;&#x30C8;&#x8A18;&#x6CD5;&#x3068;&#x540C;&#x3058;&#x3067;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> key = <span class="hljs-string">&quot;key-string&quot;</span>;
+<span class="hljs-comment">// Computed Property&#x3067;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;</span>
+<span class="hljs-keyword">const</span> object = {
+    [key]: <span class="hljs-string">&quot;value&quot;</span>
+};
+<span class="hljs-built_in">console</span>.log(object[key]); <span class="hljs-comment">// =&gt; &quot;value&quot;</span>
+</code></pre>
+<p>JavaScript&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3001;&#x5909;&#x66F4;&#x4E0D;&#x53EF;&#x80FD;&#x3068;&#x660E;&#x793A;&#x3057;&#x306A;&#x3044;&#x9650;&#x308A;&#x5909;&#x66F4;&#x53EF;&#x80FD;&#x306A;mutable&#x306E;&#x7279;&#x6027;&#x3092;&#x3082;&#x3064;&#x3053;&#x3068;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x95A2;&#x6570;&#x304C;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;&#x52DD;&#x624B;&#x306B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">doSomething</span>(<span class="hljs-params">object</span>) </span>{
+    object.key = <span class="hljs-string">&quot;value&quot;</span>;
+    <span class="hljs-comment">// &#x8272;&#x3005;&#x306A;&#x51E6;&#x7406;...</span>
+}
+<span class="hljs-keyword">const</span> object = {};
+doSomething(object); <span class="hljs-comment">// object&#x304C;&#x5909;&#x66F4;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(object.key); <span class="hljs-comment">// =&gt; &quot;value&quot;</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x521D;&#x671F;&#x5316;&#x6642;&#x4EE5;&#x5916;&#x306B;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x3068;&#x3001;&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x304C;&#x308F;&#x304B;&#x308A;&#x306B;&#x304F;&#x304F;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x3067;&#x304D;&#x308B;&#x9650;&#x308A;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306F;&#x521D;&#x671F;&#x5316;&#x6642;&#x3001;&#x3064;&#x307E;&#x308A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x306E;&#x4E2D;&#x3067;&#x660E;&#x793A;&#x3057;&#x305F;&#x307B;&#x3046;&#x304C;&#x3088;&#x3044;&#x3068;&#x3044;&#x3048;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="&#x30B3;&#x30E9;&#x30E0;-const&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x5909;&#x66F4;&#x53EF;&#x80FD;"><a name="&#x30B3;&#x30E9;&#x30E0;-const&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x5909;&#x66F4;&#x53EF;&#x80FD;" class="plugin-anchor" href="#&#x30B3;&#x30E9;&#x30E0;-const&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x5909;&#x66F4;&#x53EF;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>[&#x30B3;&#x30E9;&#x30E0;] const&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x5909;&#x66F4;&#x53EF;&#x80FD;</h3>
+<p>&#x5148;&#x307B;&#x3069;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x4F8B;&#x3067;&#x3001;<code>const</code>&#x3067;&#x5BA3;&#x8A00;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x30A8;&#x30E9;&#x30FC;&#x306A;&#x304F;&#x5909;&#x66F4;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x5206;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x4F8B;&#x3092;&#x307F;&#x308B;&#x3068;&#x3001;&#x5024;&#x3067;&#x3042;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x5909;&#x66F4;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x5206;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = { key: <span class="hljs-string">&quot;value&quot;</span> };
+object.key = <span class="hljs-string">&quot;Hi!&quot;</span>; <span class="hljs-comment">// const&#x3067;&#x5B9A;&#x7FA9;&#x3057;&#x305F;object&#x304C;&#x5909;&#x66F4;&#x3067;&#x304D;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(object.key); <span class="hljs-comment">// =&gt; &quot;Hi!&quot;</span>
+</code></pre>
+<p>&#x3053;&#x308C;&#x306F;&#x3001;JavaScript&#x306E;<code>const</code>&#x306F;&#x5024;&#x3092;&#x56FA;&#x5B9A;&#x3059;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x5909;&#x6570;&#x3078;&#x306E;&#x518D;&#x4EE3;&#x5165;&#x3092;&#x9632;&#x3050;&#x305F;&#x3081;&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;<code>object</code>&#x5909;&#x6570;&#x3078;&#x306E;&#x518D;&#x4EE3;&#x5165;&#x306F;&#x9632;&#x3050;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x5909;&#x6570;&#x306B;&#x4EE3;&#x5165;&#x3055;&#x308C;&#x305F;&#x5024;&#x3067;&#x3042;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5909;&#x66F4;&#x306F;&#x9632;&#x3050;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;&#xFF08;&#x300C;<a href="../variables/#const">&#x5909;&#x6570;&#x3068;&#x5BA3;&#x8A00;</a>&#x300D;&#x3092;&#x53C2;&#x7167;&#xFF09;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = { key: <span class="hljs-string">&quot;value&quot;</span> };
+object = {}; <span class="hljs-comment">// =&gt; SyntaxError</span>
+</code></pre>
+<p>&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5909;&#x66F4;&#x3092;&#x9632;&#x6B62;&#x3059;&#x308B;&#x306B;&#x306F;<code>Object.freeze</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x305F;&#x3060;&#x3057;&#x3001;strict mode&#x3067;&#x306A;&#x3044;&#x3068;&#x4F8B;&#x5916;&#x304C;&#x767A;&#x751F;&#x305B;&#x305A;&#x3001;&#x7121;&#x8A00;&#x3067;&#x5909;&#x66F4;&#x3092;&#x7121;&#x8996;&#x3059;&#x308B;&#x3060;&#x3051;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>Object.freeze</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x5FC5;&#x305A;strict mode&#x3068;&#x5408;&#x308F;&#x305B;&#x3066;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-javascript"><span class="hljs-meta">&quot;use strict&quot;</span>;
+<span class="hljs-keyword">const</span> object = <span class="hljs-built_in">Object</span>.freeze({ key: <span class="hljs-string">&quot;value&quot;</span> });
+<span class="hljs-comment">// freeze&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x8FFD;&#x52A0;&#x3084;&#x5909;&#x66F4;&#x3067;&#x304D;&#x306A;&#x3044;</span>
+object.key = <span class="hljs-string">&quot;value&quot;</span>; <span class="hljs-comment">// =&gt; TypeError</span>
+</code></pre>
+<h2 id="&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5B58;&#x5728;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;"><a name="&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5B58;&#x5728;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;" class="plugin-anchor" href="#&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5B58;&#x5728;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5B58;&#x5728;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</h2>
+<p>JavaScript&#x3067;&#x306F;&#x3001;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B;&#x4F8B;&#x5916;&#x3067;&#x306F;&#x306A;&#x304F;<code>undefined</code>&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x306F;&#x3001;<code>object</code>&#x306B;&#x306F;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;<code>notFound</code>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;&#x7D50;&#x679C;&#x3068;&#x3057;&#x3066;<code>undehfined</code>&#x3068;&#x3044;&#x3046;&#x5024;&#x304C;&#x8FD4;&#x3063;&#x3066;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = {};
+<span class="hljs-built_in">console</span>.log(object.notFound); <span class="hljs-comment">// =&gt; undefined</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;JavaScript&#x3067;&#x306F;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3078;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B;&#x4F8B;&#x5916;&#x304C;&#x767A;&#x751F;&#x3057;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3092;&#x9593;&#x9055;&#x3048;&#x305F;&#x5834;&#x5408;&#x306B;<code>undefined</code>&#x304C;&#x8FD4;&#x308B;&#x305F;&#x3081;&#x3001;&#x6C17;&#x3065;&#x304D;&#x306B;&#x304F;&#x3044;&#x3068;&#x3044;&#x3046;&#x554F;&#x984C;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x30CD;&#x30B9;&#x30C8;&#x3067;&#x304D;&#x308B;&#x305F;&#x3081;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3092;&#x9014;&#x4E2D;&#x3067;&#x9593;&#x9055;&#x3048;&#x3066;&#x3044;&#x305F;&#x5834;&#x5408;&#x306B;&#x3082;&#x6C17;&#x3065;&#x304D;&#x306B;&#x304F;&#x3044;&#x3068;&#x3044;&#x3046;&#x554F;&#x984C;&#x304C;&#x8D77;&#x304D;&#x3084;&#x3059;&#x3044;&#x3067;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> widget = {
+    <span class="hljs-built_in">window</span>: {
+        title: <span class="hljs-string">&quot;&#x30A6;&#x30A3;&#x30B8;&#x30A7;&#x30C3;&#x30C8;&#x306E;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&quot;</span>
+    }
+};
+<span class="hljs-comment">// `window`&#x3092;`windw`&#x3068;&#x9593;&#x9055;&#x3048;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(widget.windw); <span class="hljs-comment">// =&gt; undefined</span>
+<span class="hljs-comment">// `undefined.title`&#x3068;&#x66F8;&#x3044;&#x305F;&#x306E;&#x3068;&#x540C;&#x3058;&#x306A;&#x306E;&#x3067;&#x3001;&#x3053;&#x306E;&#x6642;&#x521D;&#x3081;&#x3066;&#x4F8B;&#x5916;&#x304C;&#x6295;&#x3052;&#x3089;&#x308C;&#x308B;</span>
+<span class="hljs-comment">// &quot;widget.windw is undefined&quot;&#x306A;&#x3069;&#x306E;&#x4F8B;&#x5916;&#x304C;&#x767A;&#x751F;&#x3059;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(widget.windw.title); <span class="hljs-comment">// =&gt; TypeError</span>
+<span class="hljs-comment">// &#x4F8B;&#x5916;&#x304C;&#x767A;&#x751F;&#x3057;&#x305F;&#x6587;&#x4EE5;&#x964D;&#x306F;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x306A;&#x3044;</span>
+</code></pre>
+<p><code>undefined</code>&#x3084;<code>null</code>&#x306F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x306F;&#x306A;&#x3044;&#x305F;&#x3081;&#x3001;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3078;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3059;&#x308B;&#x4F8B;&#x5916;&#x304C;&#x767A;&#x751F;&#x3057;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x5834;&#x5408;&#x306B;&#x3001;&#x3042;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x3042;&#x308B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x304C;&#x3044;&#x304F;&#x3064;&#x304B;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="undefined&#x3068;&#x306E;&#x6BD4;&#x8F03;"><a name="undefined&#x3068;&#x306E;&#x6BD4;&#x8F03;" class="plugin-anchor" href="#undefined&#x3068;&#x306E;&#x6BD4;&#x8F03;"><i class="fa fa-link" aria-hidden="true"></i></a>undefined&#x3068;&#x306E;&#x6BD4;&#x8F03;</h3>
+<p>&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3078;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B;&#x3001;<code>undefined</code>&#x3092;&#x8FD4;&#x3059;&#x305F;&#x3081;&#x5B9F;&#x969B;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x6BD4;&#x8F03;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3082;&#x5224;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = { key: <span class="hljs-string">&quot;value&quot;</span> };
+<span class="hljs-comment">// `key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;`undefined`&#x3067;&#x306F;&#x306A;&#x3044;&#x306A;&#x3089;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;?</span>
+<span class="hljs-keyword">if</span> (object.key !== <span class="hljs-literal">undefined</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;`key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5024;&#x306F;`undefined`&quot;</span>);
+}
+</code></pre>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;&#x3053;&#x306E;&#x65B9;&#x6CD5;&#x306F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5024;&#x304C;<code>undefined</code>&#x3067;&#x3042;&#x3063;&#x305F;&#x5834;&#x5408;&#x306B;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x306A;&#x3044;&#x304B;&#x3089;<code>undefined</code>&#x306A;&#x306E;&#x304B;&#x304C;&#x533A;&#x5225;&#x3067;&#x304D;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x554F;&#x984C;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x4F8B;&#x306F;&#x3001;<code>key</code>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306F;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;&#x5024;&#x304C;<code>undefined</code>&#x3067;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x5B58;&#x5728;&#x306E;&#x5224;&#x5B9A;&#x304C;&#x4E0A;&#x624B;&#x304F;&#x3067;&#x304D;&#x3066;&#x3044;&#x306A;&#x3044;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = { key: <span class="hljs-literal">undefined</span> };
+<span class="hljs-comment">// `key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5024;&#x304C;`undefined`</span>
+<span class="hljs-keyword">if</span> (object.key !== <span class="hljs-literal">undefined</span>) {
+    <span class="hljs-comment">// &#x5B9F;&#x884C;&#x3055;&#x308C;&#x306A;&#x3044;&#x6587;</span>
+}
+</code></pre>
+<h3 id="in&#x6F14;&#x7B97;&#x5B50;&#x3092;&#x4F7F;&#x3046;"><a name="in&#x6F14;&#x7B97;&#x5B50;&#x3092;&#x4F7F;&#x3046;" class="plugin-anchor" href="#in&#x6F14;&#x7B97;&#x5B50;&#x3092;&#x4F7F;&#x3046;"><i class="fa fa-link" aria-hidden="true"></i></a>in&#x6F14;&#x7B97;&#x5B50;&#x3092;&#x4F7F;&#x3046;</h3>
+<p><code>in</code>&#x6F14;&#x7B97;&#x5B50;&#x306F;&#x3001;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x4E0A;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x3042;&#x308B;&#x304B;&#x3092;&#x5224;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-string">&quot;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&quot;</span> <span class="hljs-keyword">in</span> &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;; <span class="hljs-comment">// true or false</span>
+</code></pre>
+<p>&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;<code>object</code>&#x306B;<code>key</code>&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x306A;&#x3089;&#x3001;<code>true</code>&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = { key: <span class="hljs-literal">undefined</span> };
+<span class="hljs-comment">// `key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x306A;&#x3089;true</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;key&quot;</span> <span class="hljs-keyword">in</span> object) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;`key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306F;&#x5B58;&#x5728;&#x3059;&#x308B;&quot;</span>);
+}
+</code></pre>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;<code>in</code>&#x6F14;&#x7B97;&#x5B50;&#x306F;&#x3001;<code>for...in</code>&#x6587;&#x3068;&#x540C;&#x3058;&#x304F;&#x3001;&#x5BFE;&#x8C61;&#x3068;&#x306A;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;&#x5834;&#x5408;&#x3001;&#x89AA;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x307E;&#x3067;&#x63A2;&#x7D22;&#x3057;&#x5217;&#x6319;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>object</code>&#x81EA;&#x8EAB;&#x304C;&#x6301;&#x3063;&#x3066;&#x3044;&#x306A;&#x304F;&#x3066;&#x3082;&#x3001;&#x89AA;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x306A;&#x3089;&#x3070;<code>true</code>&#x3092;&#x8FD4;&#x3057;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p><code>object</code>&#x81EA;&#x8EAB;&#x304C;&#x305D;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x5224;&#x5B9A;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;<code>Object#hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x306E;&#x304C;&#x78BA;&#x5B9F;&#x3067;&#x3059;&#x3002;</p>
+<h3 id="objecthasownproperty&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><a name="objecthasownproperty&#x30E1;&#x30BD;&#x30C3;&#x30C9;" class="plugin-anchor" href="#objecthasownproperty&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><i class="fa fa-link" aria-hidden="true"></i></a><code>Object#hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;</h3>
+<p><code>Object#hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x81EA;&#x8EAB;&#x304C;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x5224;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-js">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;.hasOwnProperty(<span class="hljs-string">&quot;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&quot;</span>); <span class="hljs-comment">// true or false</span>
+</code></pre>
+<p><code>hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x5F15;&#x6570;&#x306B;&#x5B58;&#x5728;&#x3092;&#x5224;&#x5B9A;&#x3057;&#x305F;&#x3044;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x3092;&#x6E21;&#x3057;&#x3001;&#x8A72;&#x5F53;&#x3059;&#x308B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;<code>true</code>&#x3092;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = { key: <span class="hljs-string">&quot;value&quot;</span> };
+<span class="hljs-comment">// `object`&#x304C;`key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x306A;&#x3089;true</span>
+<span class="hljs-keyword">if</span> (object.hasOwnProperty(<span class="hljs-string">&quot;key&quot;</span>)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;`object`&#x306F;`key`&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&quot;</span>);
+}
+</code></pre>
+<h2 id="objecttostring&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><a name="objecttostring&#x30E1;&#x30BD;&#x30C3;&#x30C9;" class="plugin-anchor" href="#objecttostring&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><i class="fa fa-link" aria-hidden="true"></i></a><code>Object#toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;</h2>
+<p><code>Object#toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x81EA;&#x8EAB;&#x3092;&#x6587;&#x5B57;&#x5217;&#x5316;&#x3059;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x3059;&#x3002;
+<code>String</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x3082;&#x6587;&#x5B57;&#x5217;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x9055;&#x3044;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;(&#x300C;<a href="../implicit-coercion/#to-string">&#x6697;&#x9ED9;&#x7684;&#x306A;&#x578B;&#x5909;&#x63DB;</a>&#x300D;&#x3092;&#x53C2;&#x7167;&#xFF09;</p>
+<p>&#x5B9F;&#x306F;<code>String</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x95A2;&#x6570;&#x306F;&#x3001;&#x5F15;&#x6570;&#x306B;&#x6E21;&#x3055;&#x308C;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>String</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x95A2;&#x6570;&#x3068;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x7D50;&#x679C;&#x306F;&#x3069;&#x3061;&#x3089;&#x3082;&#x540C;&#x3058;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = { key: <span class="hljs-string">&quot;value&quot;</span> };
+<span class="hljs-built_in">console</span>.log(object.toString()); <span class="hljs-comment">// =&gt; &quot;[object Object]&quot;</span>
+<span class="hljs-comment">// `String`&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x95A2;&#x6570;&#x306F;`toString`&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3093;&#x3067;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">String</span>(object)); <span class="hljs-comment">// =&gt; &quot;[object Object]&quot;</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3053;&#x3068;&#x306F;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x518D;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x5206;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x72EC;&#x81EA;&#x306E;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;<code>String</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x95A2;&#x6570;&#x3067;&#x6587;&#x5B57;&#x5217;&#x5316;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;
+&#x3059;&#x308B;&#x3068;&#x3001;&#x518D;&#x5B9A;&#x7FA9;&#x3057;&#x305F;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x8FD4;&#x308A;&#x5024;&#x304C;&#x3001;<code>String</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x95A2;&#x6570;&#x306E;&#x8FD4;&#x308A;&#x5024;&#x306B;&#x306A;&#x308B;&#x3053;&#x3068;&#x304C;&#x5206;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x72EC;&#x81EA;&#x306E;toString&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9A;&#x7FA9;</span>
+<span class="hljs-keyword">const</span> customObject = {
+    toString() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;value&quot;</span>;
+    }
+};
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">String</span>(object)); <span class="hljs-comment">// =&gt; &quot;value&quot;</span>
+</code></pre>
+<p><code>Object</code>&#x4EE5;&#x5916;&#x306E;<code>Array</code>&#x3084;<code>Number</code>&#x306A;&#x3069;&#x3082;&#x305D;&#x308C;&#x305E;&#x308C;&#x72EC;&#x81EA;&#x306E;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x7D50;&#x679C;&#x306F;&#x7570;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> number = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+<span class="hljs-comment">// Array#toString&#x304C;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;`Object#toString`&#x3068;&#x306F;&#x7570;&#x306A;&#x308B;&#x5F62;&#x5F0F;&#x3068;&#x306A;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(number.toString()); <span class="hljs-comment">// =&gt; &quot;1,2,3&quot;;</span>
+</code></pre>
+<h2 id="object&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x5143;"><a name="object&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x5143;" class="plugin-anchor" href="#object&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x5143;"><i class="fa fa-link" aria-hidden="true"></i></a><code>Object</code>&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x5143;</h2>
+<p>&#x3053;&#x3053;&#x307E;&#x3067;&#x306F;&#x3001;<code>Object</code>&#x81EA;&#x8EAB;&#x306E;&#x6A5F;&#x80FD;&#x306B;&#x3064;&#x3044;&#x3066;&#x898B;&#x3066;&#x304D;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;
+<code>Object</code>&#x306B;&#x306F;&#x3001;&#x4ED6;&#x306E;<code>Array</code>&#x3084;<code>String</code>&#x3001;<code>Function</code>&#x3068;&#x3044;&#x3063;&#x305F;&#x4ED6;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3068;&#x306F;&#x7570;&#x306A;&#x308B;&#x7279;&#x5FB4;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3059;&#x3079;&#x3066;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;<code>Object</code>&#x306E;<code>prototype</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+<code>prototype</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5099;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x7279;&#x5225;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>Object</code>&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x5171;&#x901A;&#x3057;&#x3066;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3084;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3068;&#x3082;&#x3044;&#x3048;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="img/object-prototype.png" alt="&#x4ED6;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;`Object`&#x306E;`prototype`&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;"></p>
+<p>&#x5177;&#x4F53;&#x7684;&#x306B;&#x3069;&#x3046;&#x3044;&#x3046;&#x3053;&#x3068;&#x304B;&#x3092;&#x898B;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;
+&#x5148;&#x307B;&#x3069;&#x3082;&#x767B;&#x5834;&#x3057;&#x305F;&#x3001;<code>Object#hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x3001;<code>Object</code>&#x306E;<code>prototype</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;<code>hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x5B9A;&#x7FA9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// `Object`&#x306E;`prototype`&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;`hasOwnProperty`&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x5B9A;&#x7FA9;&#x304C;&#x3042;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty); <span class="hljs-comment">// =&gt; &quot;function&quot;</span>
+</code></pre>
+<p>&#x3053;&#x306E;<code>Object.prototype.hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x5B9A;&#x7FA9;&#x306F;&#x3001;
+<code>Object</code>&#x306E;<code>prototype</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x3042;&#x307E;&#x308A;&#x610F;&#x8B58;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x5B9A;&#x7FA9;&#x304C;&#x81EA;&#x52D5;&#x7684;&#x306B;&#x884C;&#x308F;&#x308C;&#x3066;&#x3044;&#x308B;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</span>
+<span class="hljs-comment">// `Object`&#x306E;`prototype`&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;`hasOwnProperty`&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x5B9A;&#x7FA9;&#x3092;&#x884C;&#x3046;</span>
+<span class="hljs-built_in">Object</span>.prototype.hasOwnProperty = (propertyName) =&gt; {
+    <span class="hljs-comment">// hasOwnProperty&#x306E;&#x51E6;&#x7406;</span>
+};
+</code></pre>
+<p><code>Object</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306F;&#x3001;&#x3053;&#x306E;<code>prototype</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x305F;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3084;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;&#x6642;&#x306B;&#x7D99;&#x627F;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3064;&#x307E;&#x308A;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x3084;<code>new Object</code>&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3001;<code>Object.prototype</code>&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x305F;&#x3082;&#x306E;&#x304C;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// var object = new Object()&#x3082;&#x540C;&#x3058;</span>
+<span class="hljs-keyword">const</span> object = {};
+<span class="hljs-comment">// &#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x304C;prototype&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x305F;&#x3082;&#x306E;&#x3092;&#x7D99;&#x627F;&#x3059;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(object.hasOwnProperty === <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty); <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+<p>&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>Object.prototype</code>&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3084;<code>hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x3001;
+<code>Object</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3067;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<blockquote>
+<p><code>Object</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9; -&gt; <code>Object.prototype</code></p>
+</blockquote>
+<h3 id="in&#x6F14;&#x7B97;&#x5B50;&#x3068;objecthasownproperty&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x9055;&#x3044;"><a name="in&#x6F14;&#x7B97;&#x5B50;&#x3068;objecthasownproperty&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x9055;&#x3044;" class="plugin-anchor" href="#in&#x6F14;&#x7B97;&#x5B50;&#x3068;objecthasownproperty&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x9055;&#x3044;"><i class="fa fa-link" aria-hidden="true"></i></a><code>in</code>&#x6F14;&#x7B97;&#x5B50;&#x3068;<code>Object#hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x9055;&#x3044;</h3>
+<p>&#x5148;&#x307B;&#x3069;&#x5B66;&#x3093;&#x3060;<code>in</code>&#x6F14;&#x7B97;&#x5B50;&#x3068;<code>Object#hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x9055;&#x3044;&#x304B;&#x3089;&#x3082;&#x3053;&#x3053;&#x304B;&#x3089;&#x751F;&#x3058;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p><code>hasOwnProperty</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x3001;&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x81EA;&#x8EAB;&#x304C;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x5224;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x4E00;&#x65B9;&#x3001;<code>in</code>&#x6F14;&#x7B97;&#x5B50;&#x306F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x81EA;&#x8EAB;&#x304C;&#x6301;&#x3063;&#x3066;&#x3044;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x89AA;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x307E;&#x3067;&#x9806;&#x756A;&#x306B;&#x63A2;&#x7D22;&#x3057;&#x3066;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x5224;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = {};
+<span class="hljs-comment">// `object`&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x81EA;&#x4F53;&#x306B;`toString`&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x3044;</span>
+<span class="hljs-built_in">console</span>.log(object.hasOwnProperty(<span class="hljs-string">&quot;toString&quot;</span>)); <span class="hljs-comment">// =&gt; false</span>
+<span class="hljs-comment">// `in`&#x6F14;&#x7B97;&#x5B50;&#x306F;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x304C;&#x898B;&#x3064;&#x304B;&#x308B;&#x307E;&#x3067;&#x89AA;&#x3092;&#x8FBF;&#x308B;&#x305F;&#x3081;&#x3001;`Object.prototype`&#x307E;&#x3067;&#x898B;&#x306B;&#x884C;&#x304F;</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;toString&quot;</span> <span class="hljs-keyword">in</span> object); <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+<p>&#x3053;&#x308C;&#x306B;&#x3088;&#x308A;<code>Object</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x81EA;&#x8EAB;&#x304C;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;<code>Object.prototype</code>&#x304C;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x5206;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x7D99;&#x627F;&#x5143;&#x3092;&#x660E;&#x793A;&#x3059;&#x308B;objectcreate&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><a name="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x7D99;&#x627F;&#x5143;&#x3092;&#x660E;&#x793A;&#x3059;&#x308B;objectcreate&#x30E1;&#x30BD;&#x30C3;&#x30C9;" class="plugin-anchor" href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x7D99;&#x627F;&#x5143;&#x3092;&#x660E;&#x793A;&#x3059;&#x308B;objectcreate&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x7D99;&#x627F;&#x5143;&#x3092;&#x660E;&#x793A;&#x3059;&#x308B;<code>Object.create</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;</h3>
+<p><code>Object.create</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3001;&#x7B2C;&#x4E00;&#x5F15;&#x6570;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x305F;<code>prototype</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x7D99;&#x627F;&#x3057;&#x305F;&#x65B0;&#x3057;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x5148;&#x307B;&#x3069;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x306F;<code>Object.prototype</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x81EA;&#x52D5;&#x7684;&#x306B;&#x7D99;&#x627F;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x3067;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x65B0;&#x3057;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3001;<code>Object.create</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// var object = {} &#x3068;&#x540C;&#x3058;</span>
+<span class="hljs-keyword">const</span> object = <span class="hljs-built_in">Object</span>.create(<span class="hljs-built_in">Object</span>.prototype);
+<span class="hljs-comment">// `object`&#x306F;`Object.prototype`&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(object.hasOwnProperty === <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty); <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+<h3 id="array&#x3082;object&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;"><a name="array&#x3082;object&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;" class="plugin-anchor" href="#array&#x3082;object&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>Array&#x3082;Object&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;</h3>
+<p><code>Object</code>&#x3068;<code>Object.prototype</code>&#x306E;&#x95A2;&#x4FC2;&#x3068;&#x540C;&#x3058;&#x304F;&#x3001;<code>Array</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x3082;<code>Array.prototype</code>&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>Array</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306F;<code>Array.prototype</code>&#x3092;&#x7D99;&#x627F;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3055;&#x3089;&#x306B;&#x3001;<code>Array.prototype</code>&#x306F;<code>Object.prototype</code>&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;<code>Array</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306F;<code>Object.prototype</code>&#x3082;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3059;&#x3002;</p>
+<blockquote>
+<p><code>Array</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9; -&gt; <code>Array.prototype</code> -&gt; <code>Object.prototype</code></p>
+</blockquote>
+<p><code>Object.create</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3063;&#x3066;<code>Array</code>&#x3068;<code>Object</code>&#x306E;&#x95A2;&#x4FC2;&#x3092;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x3057;&#x3066;&#x8868;&#x73FE;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;
+<code>Array</code>&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x306E;&#x5B9F;&#x88C5;&#x306A;&#x3069;&#x306F;&#x5B9F;&#x969B;&#x306E;&#x3082;&#x306E;&#x3068;&#x306F;&#x7570;&#x306A;&#x308B;&#x306E;&#x3067;&#x3001;&#x3042;&#x304F;&#x307E;&#x3067;&#x95A2;&#x4FC2;&#x306E;&#x4F8B;&#x793A;&#x3067;&#x3057;&#x304B;&#x306A;&#x3044;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// `Array`&#x30B3;&#x30F3;&#x30B9;&#x30C8;&#x30E9;&#x30AF;&#x30BF;&#x81EA;&#x8EAB;&#x306F;&#x95A2;&#x6570;&#x3067;&#x3082;&#x3042;&#x308B;</span>
+<span class="hljs-keyword">const</span> <span class="hljs-built_in">Array</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{};
+<span class="hljs-comment">// `Array.prototype`&#x306F;`Object.prototype`&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">Array</span>.prototype = <span class="hljs-built_in">Object</span>.create(<span class="hljs-built_in">Object</span>.prototype);
+<span class="hljs-comment">// `Array`&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306F;&#x3001;`Array.prototype`&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-keyword">const</span> array = <span class="hljs-built_in">Object</span>.create(<span class="hljs-built_in">Array</span>.prototype);
+<span class="hljs-comment">// `array`&#x306F;`Object.prototype`&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(array.hasOwnProperty === <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty); <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;<code>Array</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3082;<code>Object.prototype</code>&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;
+<code>Object.prototype</code>&#x306B;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code>// var array = new Array(); &#x3068;&#x540C;&#x3058;
+var array = [];
+// `Array`&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9; -&gt; `Array.prototype` -&gt; `Object.prototype`
+console.log(array.hasOwnProperty === Object.prototype.hasOwnProperty); // =&gt; true
+</code></pre><p>&#x3053;&#x306E;&#x7D99;&#x627F;&#x306E;&#x4ED5;&#x7D44;&#x307F;&#x306F;&#x3001;<strong>prototype&#x7D99;&#x627F;</strong>&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;JavaScript&#x306E;&#x30B3;&#x30A2;&#x3068;&#x306A;&#x308B;&#x6982;&#x5FF5;&#x3067;&#x3059;&#x3002;
+&#x8A73;&#x3057;&#x304F;&#x306F;&#x3001;&#x7B2C;n&#x7AE0;&#x306E;&quot;&#x95A2;&#x6570;&quot;&#x3067;&#x8A73;&#x3057;&#x304F;&#x89E3;&#x8AAC;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>[ ] TODO: &#x95A2;&#x6570;&#x306E;&#x7AE0;&#x3092;&#x66F8;&#x3044;&#x305F;&#x3089;&#x5909;&#x66F4;&#x3059;&#x308B;</li>
+</ul>
+<p>&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;<code>Object</code>&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x89AA;&#x3068;&#x306A;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3060;&#x3051;&#x3092;&#x899A;&#x3048;&#x3066;&#x304A;&#x304F;&#x3060;&#x3051;&#x3067;&#x554F;&#x984C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x3053;&#x308C;&#x306B;&#x3088;&#x308A;&#x3001;<code>Array</code>&#x3084;<code>String</code>&#x306A;&#x3069;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3082;<code>Object.prototype</code>&#x304C;&#x3082;&#x3064;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;&#x70B9;&#x3092;&#x899A;&#x3048;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="&#x30B3;&#x30E9;&#x30E0;-objectprototype&#x3092;&#x7D99;&#x627F;&#x3057;&#x306A;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;"><a name="&#x30B3;&#x30E9;&#x30E0;-objectprototype&#x3092;&#x7D99;&#x627F;&#x3057;&#x306A;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;" class="plugin-anchor" href="#&#x30B3;&#x30E9;&#x30E0;-objectprototype&#x3092;&#x7D99;&#x627F;&#x3057;&#x306A;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;"><i class="fa fa-link" aria-hidden="true"></i></a>[&#x30B3;&#x30E9;&#x30E0;] <code>Object.prototype</code>&#x3092;&#x7D99;&#x627F;&#x3057;&#x306A;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</h2>
+<p><code>Object</code>&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x89AA;&#x3068;&#x306A;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3042;&#x308B;&#x8A00;&#x3044;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;&#x4F8B;&#x5916;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30A4;&#x30C7;&#x30A3;&#x30AA;&#x30E0;&#x306B;&#x8FD1;&#x3044;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;<code>Object.create(null)</code>&#x3068;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;<code>Object.prototype</code>&#x3092;&#x7D99;&#x627F;&#x3057;&#x306A;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306B;&#x3088;&#x308A;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3084;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x306A;&#x3069;&#x3092;&#x5168;&#x304F;&#x6301;&#x305F;&#x306A;&#x3044;&#x672C;&#x5F53;&#x306B;<strong>&#x7A7A;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</strong>&#x3092;&#x4F5C;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x89AA;&#x304C;null&#x3001;&#x3064;&#x307E;&#x308A;&#x89AA;&#x304C;&#x3044;&#x306A;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x308B;</span>
+<span class="hljs-keyword">const</span> object = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+<span class="hljs-comment">// Object.prototype&#x3092;&#x7D99;&#x627F;&#x3057;&#x306A;&#x3044;&#x305F;&#x3081;&#x3001;hasOwnProperty&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;</span>
+<span class="hljs-built_in">console</span>.log(object.hasOwnProperty); <span class="hljs-comment">// =&gt; undefined</span>
+</code></pre>
+<p><code>Object.create</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;ES5&#x304B;&#x3089;&#x5C0E;&#x5165;&#x3055;&#x308C;&#x3001;<code>Object.create(null)</code>&#x3068;&#x3044;&#x3046;&#x30A4;&#x30C7;&#x30A3;&#x30AA;&#x30E0;&#x306F;&#x3001;&#x4E00;&#x90E8;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306A;&#x3069;&#x3067;<code>Map</code>&#xFF08;&#x9023;&#x60F3;&#x914D;&#x5217;&#x3068;&#x3082;&#x8A00;&#x308F;&#x308C;&#x308B;&#xFF09;&#x306E;&#x4EE3;&#x308F;&#x308A;&#x3068;&#x3057;&#x3066;&#x5229;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+<code>Map</code>&#x306F;&#x3042;&#x3089;&#x3086;&#x308B;&#x6587;&#x5B57;&#x5217;&#x3092;&#x30AD;&#x30FC;&#x540D;&#x306B;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;<code>Object</code>&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306F;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;<code>Object.protptype</code>&#x306B;&#x3042;&#x308B;&#x3082;&#x306E;&#x304C;&#x30AD;&#x30FC;&#x3068;&#x3057;&#x3066;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x305F;&#x3081;&#x3067;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// &#x305F;&#x3060;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</span>
+<span class="hljs-keyword">const</span> object = {};
+<span class="hljs-comment">// &quot;toString&quot;&#x3068;&#x3044;&#x3046;&#x5024;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x306A;&#x3044;&#x306E;&#x306B;&#x3001;&quot;toString&quot;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(object[<span class="hljs-string">&quot;toString&quot;</span>]);<span class="hljs-comment">// Function </span>
+<span class="hljs-comment">// Map&#x306E;&#x3088;&#x3046;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</span>
+<span class="hljs-keyword">const</span> mapLike = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+<span class="hljs-comment">// toString&#x30AD;&#x30FC;&#x306F;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;</span>
+<span class="hljs-built_in">console</span>.log(mapLike[<span class="hljs-string">&quot;toString&quot;</span>]); <span class="hljs-comment">// =&gt; undefined</span>
+</code></pre>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;ES2015&#x304B;&#x3089;&#x306F;&#x3001;&#x672C;&#x7269;&#x306E;<code>Map</code>&#x304C;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;&#x305F;&#x3081;&#x3001;<code>Object.create(null)</code>&#x3092;<code>Map</code>&#x306E;&#x4EE3;&#x308F;&#x308A;&#x306B;&#x5229;&#x7528;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>();
+<span class="hljs-comment">// toString&#x30AD;&#x30FC;&#x306F;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;</span>
+<span class="hljs-built_in">console</span>.log(map.has(<span class="hljs-string">&quot;toString&quot;</span>)); <span class="hljs-comment">// =&gt; false</span>
+</code></pre>
+<h2 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x9759;&#x7684;&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><a name="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x9759;&#x7684;&#x30E1;&#x30BD;&#x30C3;&#x30C9;" class="plugin-anchor" href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x9759;&#x7684;&#x30E1;&#x30BD;&#x30C3;&#x30C9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x9759;&#x7684;&#x30E1;&#x30BD;&#x30C3;&#x30C9;</h2>
+<p>&#x6700;&#x5F8C;&#x306B;<code>Object</code>&#x306E;&#x9759;&#x7684;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x3064;&#x3044;&#x3066;&#x898B;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5217;&#x6319;"><a name="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5217;&#x6319;" class="plugin-anchor" href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5217;&#x6319;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x5217;&#x6319;</h3>
+<p>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x96C6;&#x5408;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3068;&#x3057;&#x3066;&#x3001;<code>Object.keys</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3001;<code>Object.values</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3001;<code>Object.entries</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x3089;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x3001;&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x81EA;&#x8EAB;&#x304C;&#x3082;&#x3064;&#x5217;&#x6319;&#x53EF;&#x80FD;&#x306A;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3060;&#x3051;&#x3092;&#x6271;&#x3044;&#x307E;&#x3059;&#x3002;&#xFF08;&#x300C;<a href="../loop/" title="&#x30EB;&#x30FC;&#x30D7;&#x3068;&#x53CD;&#x5FA9;&#x51E6;&#x7406;">&#x30EB;&#x30FC;&#x30D7;&#x3068;&#x53CD;&#x5FA9;&#x51E6;&#x7406;</a>&#x300D;&#x3092;&#x53C2;&#x7167;&#xFF09;</p>
+<p>&#x305D;&#x308C;&#x305E;&#x308C;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30AD;&#x30FC;&#x3001;&#x5024;&#x3001;&#x30AD;&#x30FC;&#x3068;&#x5024;&#x306E;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3092;&#x914D;&#x5217;&#x306B;&#x3057;&#x3066;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> object = {
+    <span class="hljs-string">&quot;one&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;two&quot;</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-string">&quot;three&quot;</span>: <span class="hljs-number">3</span>
+};
+<span class="hljs-comment">// `Object.keys`&#x306F;&#x30AD;&#x30FC;&#x306E;&#x5217;&#x6319;&#x3057;&#x305F;&#x914D;&#x5217;&#x3092;&#x8FD4;&#x3059;</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.keys(object)); <span class="hljs-comment">// =&gt; [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;]</span>
+<span class="hljs-comment">// `Object.values`&#xFF08;ES2017&#xFF09;&#x306F;&#x5024;&#x3092;&#x5217;&#x6319;&#x3057;&#x305F;&#x914D;&#x5217;&#x3092;&#x8FD4;&#x3059;</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.values(object)); <span class="hljs-comment">// =&gt; [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</span>
+<span class="hljs-comment">// `Object.entries`&#xFF08;ES2017&#xFF09;&#x306F;[&#x30AD;&#x30FC;, &#x5024;]&#x306E;&#x914D;&#x5217;&#x3092;&#x6D88;&#x3059;</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.entries(object)); <span class="hljs-comment">// =&gt; [[&quot;one&quot;, 1], [&quot;two&quot;, 2], [&quot;three&quot;, 3]]</span>
+</code></pre>
+<h3 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x30DE;&#x30FC;&#x30B8;"><a name="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x30DE;&#x30FC;&#x30B8;" class="plugin-anchor" href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x30DE;&#x30FC;&#x30B8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30B3;&#x30D4;&#x30FC;/&#x30DE;&#x30FC;&#x30B8;</h3>
+<p><code>Object.assign</code>&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x3001;&#x3042;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x5225;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x4EE3;&#x5165;&#xFF08;assign&#xFF09;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x3084;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x540C;&#x58EB;&#x306E;&#x30DE;&#x30FC;&#x30B8;&#x3092;&#x884C;&#x3046;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><code>Object.assign</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x3001;<code>target</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;1&#x3064;&#x4EE5;&#x4E0A;&#x306E;<code>sources</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>sources</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x81EA;&#x8EAB;&#x304C;&#x3082;&#x3064;&#x5217;&#x6319;&#x53EF;&#x80FD;&#x306A;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x7B2C;&#x4E00;&#x5F15;&#x6570;&#x306E;<code>target</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x30B3;&#x30D4;&#x30FC;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>Object.assign</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x8FD4;&#x308A;&#x5024;&#x306F;&#x3001;<code>target</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-built_in">Object</span>.assign(target, ...sources);
+</code></pre>
+<h4 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30DE;&#x30FC;&#x30B8;"><a name="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30DE;&#x30FC;&#x30B8;" class="plugin-anchor" href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30DE;&#x30FC;&#x30B8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30DE;&#x30FC;&#x30B8;</h4>
+<p>&#x5177;&#x4F53;&#x7684;&#x306A;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30DE;&#x30FC;&#x30B8;&#x306E;&#x4F8B;&#x3092;&#x898B;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x306F;&#x3001;&#x65B0;&#x3057;&#x304F;&#x4F5C;&#x3063;&#x305F;&#x7A7A;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;<code>target</code>&#x306B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;<code>target</code>&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;<code>objectA</code>&#x3068;<code>objectB</code>&#x3092;&#x30DE;&#x30FC;&#x30B8;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;<code>Object.assign</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x8FD4;&#x308A;&#x5024;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> objectA = { a: <span class="hljs-string">&quot;a&quot;</span> };
+<span class="hljs-keyword">const</span> objectB = { b: <span class="hljs-string">&quot;b&quot;</span> };
+<span class="hljs-keyword">const</span> merged = <span class="hljs-built_in">Object</span>.assign({}, objectA, objectB);
+<span class="hljs-built_in">console</span>.log(merged); <span class="hljs-comment">// =&gt; { a: &quot;a&quot;, b: &quot;b&quot; }</span>
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x5F15;&#x6570;&#x306B;&#x306F;&#x3001;&#x7A7A;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x65E2;&#x5B58;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3057;&#x304B;&#x3057;&#x3001;&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x898B;&#x308B;&#x3068;&#x7B2C;&#x4E00;&#x5F15;&#x6570;&#x306B;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;<code>objectA</code></p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> objectA = { a: <span class="hljs-string">&quot;a&quot;</span> };
+<span class="hljs-keyword">const</span> objectB = { b: <span class="hljs-string">&quot;b&quot;</span> };
+<span class="hljs-keyword">const</span> merged = <span class="hljs-built_in">Object</span>.assign(objectA, objectB);
+<span class="hljs-built_in">console</span>.log(merged); <span class="hljs-comment">// =&gt; { a: &quot;a&quot;, b: &quot;b&quot; }</span>
+<span class="hljs-comment">// `objectA`&#x304C;&#x5909;&#x66F4;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(objectA); <span class="hljs-comment">// =&gt; { a: &quot;a&quot;, b: &quot;b&quot; }</span>
+<span class="hljs-built_in">console</span>.log(merged === objectA); <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+<p>&#x7A7A;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;<code>target</code>&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x65E2;&#x5B58;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x306F;&#x5F71;&#x97FF;&#x3092;&#x4E0E;&#x3048;&#x305A;&#x30DE;&#x30FC;&#x30B8;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;<code>Object.assign</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x7B2C;&#x4E00;&#x5F15;&#x6570;&#x306B;&#x306F;&#x3001;&#x7A7A;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30EA;&#x30C6;&#x30E9;&#x30EB;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x306E;&#x304C;&#x5178;&#x578B;&#x7684;&#x306A;&#x5229;&#x7528;&#x65B9;&#x6CD5;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x3068;&#x304D;&#x3001;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x304C;&#x91CD;&#x8907;&#x3057;&#x305F;&#x5834;&#x5408;&#x306F;&#x3001;&#x5F8C;&#x308D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x3088;&#x308A;&#x4E0A;&#x66F8;&#x304D;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+JavaScript&#x3067;&#x306F;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306A;&#x51E6;&#x7406;&#x306F;&#x5DE6;&#x304B;&#x3089;&#x9806;&#x756A;&#x306B;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x5DE6;&#x304B;&#x3089;&#x9806;&#x306B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x4EE3;&#x5165;&#x3055;&#x308C;&#x3066;&#x3044;&#x304F;&#x3068;&#x8003;&#x3048;&#x308B;&#x3068;&#x3088;&#x3044;&#x3067;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// `version`&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x540D;&#x304C;&#x88AB;&#x3063;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-keyword">const</span> objectA = { version: <span class="hljs-string">&quot;a&quot;</span> };
+<span class="hljs-keyword">const</span> objectB = { version: <span class="hljs-string">&quot;b&quot;</span> };
+<span class="hljs-keyword">const</span> merged = <span class="hljs-built_in">Object</span>.assign({}, objectA, objectB);
+<span class="hljs-comment">// &#x5F8C;&#x308D;&#x306B;&#x3042;&#x308B;`objectB`&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3067;&#x4E0A;&#x66F8;&#x304D;&#x3055;&#x308C;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(merged); <span class="hljs-comment">// =&gt; { version: &quot;b&quot; }</span>
+</code></pre>
+<h4 id="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x8907;&#x88FD;"><a name="&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x8907;&#x88FD;" class="plugin-anchor" href="#&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x8907;&#x88FD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x8907;&#x88FD;</h4>
+<!-- textlint-disable preset-ja-technical-writing/max-ten -->
+<!-- Object.assignの引数と、で並び順を合わせるため例外的に許可 -->
+<p>JavaScript&#x306B;&#x306F;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8907;&#x88FD;&#x3059;&#x308B;&#x95A2;&#x6570;&#x306F;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x3057;&#x304B;&#x3057;&#x3001;&#x65B0;&#x3057;&#x304F;&#x7A7A;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x305D;&#x3053;&#x3078;&#x65E2;&#x5B58;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308C;&#x3070;&#x3001;&#x305D;&#x308C;&#x306F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x8907;&#x88FD;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x3044;&#x3048;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;<code>Object.assign</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8907;&#x88FD;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<!-- textlint-enable preset-ja-technical-writing/max-ten -->
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// `object`&#x3092;&#x6D45;&#x304F;&#x8907;&#x88FD;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x3059;</span>
+<span class="hljs-keyword">const</span> shallowClone = (object) =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, object);
+};
+<span class="hljs-keyword">const</span> object = { a: <span class="hljs-string">&quot;a&quot;</span> };
+<span class="hljs-keyword">const</span> cloneObject = shallowClone(object);
+<span class="hljs-built_in">console</span>.log(cloneObject); <span class="hljs-comment">// =&gt; { a: &quot;a&quot; }</span>
+<span class="hljs-built_in">console</span>.log(object === cloneObject); <span class="hljs-comment">// =&gt; false</span>
+</code></pre>
+<p>&#x6CE8;&#x610F;&#x70B9;&#x3068;&#x3057;&#x3066;&#x3001;<code>Object.assign</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;<code>sources</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x6D45;&#x304F;&#x30B3;&#x30D4;&#x30FC;&#xFF08;shallow copy&#xFF09;&#x3059;&#x308B;&#x70B9;&#x3067;&#x3059;&#x3002;
+<code>sources</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x81EA;&#x8EAB;&#x304C;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x5217;&#x6319;&#x3067;&#x304D;&#x308B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5024;&#x304C;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3042;&#x308B;&#x5834;&#x5408;&#x306B;&#x3001;&#x305D;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x307E;&#x3067;&#x3082;&#x8907;&#x88FD;&#x3059;&#x308B;&#x308F;&#x3051;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> shallowClone = (object) =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, object);
+};
+<span class="hljs-keyword">const</span> object = { 
+    level: <span class="hljs-number">1</span>,
+    nest: {
+        level: <span class="hljs-number">2</span>
+    },
+};
+<span class="hljs-keyword">const</span> cloneObject = shallowClone(object);
+<span class="hljs-comment">// `nest`&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x8907;&#x88FD;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;</span>
+<span class="hljs-built_in">console</span>.log(cloneObject.nest === object.nest); <span class="hljs-comment">// =&gt; true</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x6D45;&#x3044;&#x30B3;&#x30D4;&#x30FC;&#x306E;&#x3053;&#x3068;&#x3092;shallow copy&#x3068;&#x547C;&#x3073;&#x3001;&#x9006;&#x306B;&#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x306E;&#x5024;&#x307E;&#x3067;&#x3082;&#x518D;&#x5E30;&#x7684;&#x306B;&#x8907;&#x88FD;&#x3057;&#x3066;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x6DF1;&#x3044;&#x30B3;&#x30D4;&#x30FC;&#xFF08;deep copy&#xFF09;&#x3068;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;
+shallow&#x306A;&#x5B9F;&#x88C5;&#x3092;&#x4F7F;&#x3044;&#x518D;&#x5E30;&#x7684;&#x306B;&#x51E6;&#x7406;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;deep&#x306A;&#x5B9F;&#x88C5;&#x3092;&#x5B9F;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x306F;&#x3001;<code>shallowClone</code>&#x3092;&#x4F7F;&#x3044;&#x3001;<code>deepClone</code>&#x3092;&#x5B9F;&#x73FE;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p>
+<pre><code class="lang-js"><span class="hljs-comment">// `object`&#x3092;&#x6D45;&#x304F;&#x8907;&#x88FD;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x3059;</span>
+<span class="hljs-keyword">const</span> shallowClone = (object) =&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, object);
+};
+<span class="hljs-comment">// `object`&#x3092;&#x6DF1;&#x304F;&#x8907;&#x88FD;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x3059;</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepClone</span>(<span class="hljs-params">object</span>) </span>{
+    <span class="hljs-keyword">const</span> newObject = shallowClone(object);
+    <span class="hljs-comment">// &#x30D7;&#x30ED;&#x30D1;&#x30C6;&#x30A3;&#x304C;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x578B;&#x3067;&#x3042;&#x308B;&#x306A;&#x3089;&#x3001;&#x518D;&#x5E30;&#x7684;&#x306B;&#x8907;&#x88FD;&#x3059;&#x308B;</span>
+    <span class="hljs-built_in">Object</span>.keys(newObject)
+        .filter(k =&gt; <span class="hljs-keyword">typeof</span> newObject[k] === <span class="hljs-string">&quot;object&quot;</span>)
+        .forEach(k =&gt; newObject[k] = deepClone(newObject[k]));
+    <span class="hljs-keyword">return</span> newObject;
+}
+<span class="hljs-keyword">const</span> object = { 
+    level: <span class="hljs-number">1</span>,
+    nest: {
+        level: <span class="hljs-number">2</span>
+    }
+};
+<span class="hljs-keyword">const</span> cloneObject = deepClone(object);
+<span class="hljs-comment">// `nest`&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3082;&#x518D;&#x5E30;&#x7684;&#x306B;&#x8907;&#x88FD;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;</span>
+<span class="hljs-built_in">console</span>.log(cloneObject.nest === object.nest); <span class="hljs-comment">// =&gt; false</span>
+</code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;JavaScript&#x306E;&#x30D3;&#x30EB;&#x30C8;&#x30A4;&#x30F3;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x6D45;&#x3044;&#xFF08;shallow&#xFF09;&#x306A;&#x5B9F;&#x88C5;&#x306E;&#x307F;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x3001;&#x6DF1;&#x3044;&#xFF08;deep&#xFF09;&#x306A;&#x5B9F;&#x88C5;&#x306F;&#x63D0;&#x4F9B;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x8A00;&#x8A9E;&#x3068;&#x3057;&#x3066;&#x306F;&#x6700;&#x4F4E;&#x9650;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x3001;&#x3088;&#x308A;&#x8907;&#x96D1;&#x306A;&#x6A5F;&#x80FD;&#x306F;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x5074;&#x3067;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x5F62;&#x306B;&#x306A;&#x308B;&#x3053;&#x3068;&#x304C;&#x591A;&#x3044;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x4E00;&#x65B9;&#x3001;JavaScript&#x3068;&#x3044;&#x3046;&#x8A00;&#x8A9E;&#x306F;&#x30B3;&#x30A2;&#x306B;&#x3042;&#x308B;&#x6A5F;&#x80FD;&#x304C;&#x6700;&#x4F4E;&#x9650;&#x3067;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x5C0F;&#x3055;&#x306A;&#x6A5F;&#x80FD;&#x3092;&#x3082;&#x3064;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x304C;&#x6570;&#x591A;&#x304F;&#x516C;&#x958B;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x308C;&#x3089;&#x306E;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x306F;<code>npm</code>&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;JavaScript&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x7BA1;&#x7406;&#x30C4;&#x30FC;&#x30EB;&#x3067;&#x516C;&#x958B;&#x3055;&#x308C;&#x3001;JavaScript&#x306E;&#x30A8;&#x30B3;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3092;&#x7BC9;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../implicit-coercion/" class="navigation navigation-prev " aria-label="Previous page: 暗黙的な型変換">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../array/" class="navigation navigation-next " aria-label="Next page: 配列">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"author":"azu","title":"オブジェクト","level":"1.4.12","depth":2,"next":{"title":"配列","level":"1.4.13","depth":2,"path":"basic/array/README.md","ref":"./basic/array/README.md","articles":[]},"previous":{"title":"暗黙的な型変換","level":"1.4.11","depth":2,"path":"basic/implicit-coercion/README.md","ref":"basic/implicit-coercion/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","anchors","edit-link","canonical-link","ga","js-console","github-issue-feedback"],"root":"./source/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-issue-feedback":{"repo":"asciidwango/js-primer"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"canonical-link":{"baseURL":"https://asciidwango.github.io/js-primer"},"highlight":{},"ga":{"configuration":"auto","token":"UA-2184335-18"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit","base":"https://github.com/asciidwango/js-primer/edit/master/source/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.html.md","glossary":"GLOSSARY.md","summary":"README.md"},"variables":{"console":"<a class=\"gitbook-plugin-js-console\" aria-hidden=\"true\"></a>"},"title":"JavaScriptの入門書 #jsprimer","gitbook":">=3.0.0","description":"この書籍はES2015以降をベースとしたJavaScript入門書となる予定"},"file":{"path":"basic/object/README.md","mtime":"2017-08-17T14:12:40.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-17T14:15:31.912Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-js-console/console-ui.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-issue-feedback/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1083 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ファイルを読み込む · JavaScriptの入門書 #jsprimer</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../md-to-html/" />
+    
+    
+    <link rel="prev" href="../argument-parse/" />
+    
+
+    <link rel="canonical" href="https://asciidwango.github.io/js-primer/use-case/nodecli/read-file/">
+
+<style>
+    /* deny access chapter */
+    .summary li.chapter > span {
+        cursor: not-allowed;
+        opacity: .3;
+    }
+
+    /* console ui */
+    .mirror-console-attach-button-wrapper {
+        margin-top: -1.275em;
+        margin-bottom: 1.275em
+    }
+
+    .mirror-console-wrapper {
+        margin-top: 1.275em;
+        margin-bottom: 1.275em
+    }
+</style>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    本書の読み方
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../intro/goal/">
+            
+                <a href="../../../intro/goal/">
+            
+                    
+                    本書の目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../basic/">
+            
+                <a href="../../../basic/">
+            
+                    
+                    第1部: 基礎文法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../basic/introduction/">
+            
+                <a href="../../../basic/introduction/">
+            
+                    
+                    JavaScriptとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../basic/comments/">
+            
+                <a href="../../../basic/comments/">
+            
+                    
+                    コメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../basic/variables/">
+            
+                <a href="../../../basic/variables/">
+            
+                    
+                    変数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../basic/read-eval-print/">
+            
+                <a href="../../../basic/read-eval-print/">
+            
+                    
+                    値の評価と表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../basic/data-type/">
+            
+                <a href="../../../basic/data-type/">
+            
+                    
+                    データ型とリテラル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../basic/function-method/">
+            
+                <a href="../../../basic/function-method/">
+            
+                    
+                    関数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../basic/statement-expression/">
+            
+                <a href="../../../basic/statement-expression/">
+            
+                    
+                    文と式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../../basic/condition/">
+            
+                <a href="../../../basic/condition/">
+            
+                    
+                    条件分岐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../../basic/loop/">
+            
+                <a href="../../../basic/loop/">
+            
+                    
+                    ループと反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../../basic/operator/">
+            
+                <a href="../../../basic/operator/">
+            
+                    
+                    演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../../basic/implicit-coercion/">
+            
+                <a href="../../../basic/implicit-coercion/">
+            
+                    
+                    暗黙的な型変換
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../../basic/object/">
+            
+                <a href="../../../basic/object/">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../../basic/array/">
+            
+                <a href="../../../basic/array/">
+            
+                    
+                    配列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../../basic/string/">
+            
+                <a href="../../../basic/string/">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" >
+            
+                <span>
+            
+                    
+                    Number/Math
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../../../basic/wrapper-object/">
+            
+                <a href="../../../basic/wrapper-object/">
+            
+                    
+                    ラッパーオブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" >
+            
+                <span>
+            
+                    
+                    関数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" >
+            
+                <span>
+            
+                    
+                    スコープ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" >
+            
+                <span>
+            
+                    
+                    Arrow Function
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" >
+            
+                <span>
+            
+                    
+                    分割代入（Destructuring assignment）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" >
+            
+                <span>
+            
+                    
+                    Spread Operator
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" >
+            
+                <span>
+            
+                    
+                    クラス
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" >
+            
+                <span>
+            
+                    
+                    Error/Throw
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" >
+            
+                <span>
+            
+                    
+                    Promise
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" >
+            
+                <span>
+            
+                    
+                    Generator/Iterable/Iterator
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" >
+            
+                <span>
+            
+                    
+                    ビルトインオブジェクト
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.22.1" data-path="../../../basic/json/">
+            
+                <a href="../../../basic/json/">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.2" >
+            
+                <span>
+            
+                    
+                    Date
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.3" >
+            
+                <span>
+            
+                    
+                    Map/WeakMap
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.4" >
+            
+                <span>
+            
+                    
+                    Set/WeakSet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.5" >
+            
+                <span>
+            
+                    
+                    Symbol
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" >
+            
+                <span>
+            
+                    
+                    Proxy/Reflect API
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" >
+            
+                <span>
+            
+                    
+                    非推奨の機能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" >
+            
+                <span>
+            
+                    
+                    ECMAScript策定プロセス
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第2部: 応用編（ユースケース）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../ajaxapp/">
+            
+                <a href="../../ajaxapp/">
+            
+                    
+                    Ajaxで通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../ajaxapp/entrypoint/">
+            
+                <a href="../../ajaxapp/entrypoint/">
+            
+                    
+                    エントリポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../ajaxapp/xhr/">
+            
+                <a href="../../ajaxapp/xhr/">
+            
+                    
+                    HTTP通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../ajaxapp/display/">
+            
+                <a href="../../ajaxapp/display/">
+            
+                    
+                    データを表示する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../../ajaxapp/promise/">
+            
+                <a href="../../ajaxapp/promise/">
+            
+                    
+                    Promiseを活用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node.jsでCLIアプリ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../helloworld/">
+            
+                <a href="../helloworld/">
+            
+                    
+                    Node.jsでHello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../argument-parse/">
+            
+                <a href="../argument-parse/">
+            
+                    
+                    コマンドライン引数を処理する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ファイルを読み込む
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../md-to-html/">
+            
+                <a href="../md-to-html/">
+            
+                    
+                    MarkdownをHTMLに変換する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../refactor-and-unittest/">
+            
+                <a href="../refactor-and-unittest/">
+            
+                    
+                    ユニットテストを記述する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    TODOアプリ
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >ファイルを読み込む</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;"><a name="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;" class="plugin-anchor" href="#&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;</h1>
+<p>&#x524D;&#x306E;&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x306F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x3066;&#x3001;Node.js&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x4E2D;&#x3067;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x3053;&#x306E;&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x306F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x306B;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3093;&#x3067;&#x3001;&#x6A19;&#x6E96;&#x51FA;&#x529B;&#x306B;&#x8868;&#x793A;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;"><a name="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;" class="plugin-anchor" href="#&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;</h2>
+<p>&#x307E;&#x305A;&#x306F;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30D1;&#x30B9;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x307E;&#x3059;&#x3002;&#x524D;&#x56DE;&#x306E;&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x305F;commander&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x304B;&#x3089;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x306A;&#x3044;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x306F;<code>program.args</code>&#x914D;&#x5217;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x6A19;&#x6E96;&#x51FA;&#x529B;&#x306B;&#x8868;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+<span class="hljs-built_in">console</span>.log(filePath);
+</code></pre>
+<p>&#x3053;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3092;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;&#x5F15;&#x6570;&#x306B;&#x4E0E;&#x3048;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x304C;&#x305D;&#x306E;&#x307E;&#x307E;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-shell-session">$ node receive-path.js sample.md
+sample.md
+</code></pre>
+<h2 id="fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;"><a name="fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;" class="plugin-anchor" href="#fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;"><i class="fa fa-link" aria-hidden="true"></i></a>fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;</h2>
+<p>&#x53D6;&#x5F97;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3092;&#x3082;&#x3068;&#x306B;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x307E;&#x3059;&#x3002;
+Node.js&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8AAD;&#x307F;&#x66F8;&#x304D;&#x3092;&#x304A;&#x3053;&#x306A;&#x3046;&#x306B;&#x306F;&#x3001;&#x6A19;&#x6E96;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;<a href="https://nodejs.org/api/fs.html" target="_blank">fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</a>&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x307E;&#x305A;&#x306F;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x305F;&#x3081;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<code>sample.md</code>&#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x3067;<code>receive-path.js</code>&#x3068;&#x540C;&#x3058;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x914D;&#x7F6E;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-markdown"><span class="hljs-section"># sample</span>
+</code></pre>
+<h3 id="fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;"><a name="fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;" class="plugin-anchor" href="#fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;"><i class="fa fa-link" aria-hidden="true"></i></a>fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</h3>
+<p>fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306F;&#x3001;Node.js&#x3067;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8AAD;&#x307F;&#x66F8;&#x304D;&#x3092;&#x304A;&#x3053;&#x306A;&#x3046;&#x305F;&#x3081;&#x306E;&#x57FA;&#x672C;&#x7684;&#x306A;&#x95A2;&#x6570;&#x3092;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+&#x3059;&#x3079;&#x3066;&#x306E;&#x95A2;&#x6570;&#x306F;&#x975E;&#x540C;&#x671F;&#x5F62;&#x5F0F;&#x3068;&#x540C;&#x671F;&#x5F62;&#x5F0F;&#x306E;&#x4E21;&#x65B9;&#x304C;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x975E;&#x540C;&#x671F;&#x5F62;&#x5F0F;&#x306E;&#x95A2;&#x6570;&#x306F;&#x5E38;&#x306B;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x307E;&#x3059;&#x3002; 
+&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x306E;&#x7B2C;1&#x5F15;&#x6570;&#x306F;&#x5FC5;&#x305A;&#x305D;&#x306E;&#x51E6;&#x7406;&#x3067;&#x767A;&#x751F;&#x3057;&#x305F;&#x30A8;&#x30E9;&#x30FC;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x3066;&#x3001;&#x51E6;&#x7406;&#x306E;&#x623B;&#x308A;&#x5024;&#x306A;&#x3069;&#x304C;&#x305D;&#x306E;&#x5F8C;&#x308D;&#x306E;&#x5F15;&#x6570;&#x306B;&#x3064;&#x3065;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x51E6;&#x7406;&#x304C;&#x6210;&#x529F;&#x3057;&#x305F;&#x3068;&#x304D;&#x306B;&#x306F;&#x3001;&#x7B2C;1&#x5F15;&#x6570;&#x306F;<code>null</code>&#x307E;&#x305F;&#x306F;<code>undefined</code>&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x4E00;&#x65B9;&#x3001;&#x540C;&#x671F;&#x5F62;&#x5F0F;&#x306E;&#x95A2;&#x6570;&#x304C;&#x51E6;&#x7406;&#x306B;&#x5931;&#x6557;&#x3057;&#x305F;&#x3068;&#x304D;&#x306F;&#x4F8B;&#x5916;&#x3092;&#x767A;&#x751F;&#x3055;&#x305B;&#x308B;&#x306E;&#x3067;&#x3001;try/catch&#x6587;&#x306B;&#x3088;&#x3063;&#x3066;&#x4F8B;&#x5916;&#x51E6;&#x7406;&#x3092;&#x304A;&#x3053;&#x306A;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x975E;&#x540C;&#x671F;&#x5F62;&#x5F0F;&#x306E;&#x95A2;&#x6570;&#x306E;&#x4F8B;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+fs.readFile(<span class="hljs-string">&quot;sample.md&quot;</span>, (err, file) =&gt; {
+});
+</code></pre>
+<p>&#x305D;&#x3057;&#x3066;&#x3001;&#x6B21;&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x540C;&#x3058;&#x95A2;&#x6570;&#x306E;&#x540C;&#x671F;&#x5F62;&#x5F0F;&#x306E;&#x4F8B;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> file = fs.readFileSync(<span class="hljs-string">&quot;sample.md&quot;</span>);
+} <span class="hljs-keyword">catch</span> (err) { 
+}
+</code></pre>
+<p>Node.js&#x306F;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30B9;&#x30EC;&#x30C3;&#x30C9;&#x306A;&#x306E;&#x3067;&#x3001;&#x30CE;&#x30F3;&#x30D6;&#x30ED;&#x30C3;&#x30AD;&#x30F3;&#x30B0;&#x51E6;&#x7406;&#x3067;&#x3042;&#x308B;&#x975E;&#x540C;&#x671F;&#x5F62;&#x5F0F;&#x306E;API&#x3092;&#x9078;&#x3076;&#x3053;&#x3068;&#x304C;&#x307B;&#x3068;&#x3093;&#x3069;&#x3067;&#x3059;&#x3002;
+Node.js&#x306B;&#x306F;fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x4EE5;&#x5916;&#x306B;&#x3082;&#x591A;&#x304F;&#x306E;&#x975E;&#x540C;&#x671F;API&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x306B;&#x6163;&#x308C;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="readfile&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3046;"><a name="readfile&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3046;" class="plugin-anchor" href="#readfile&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3046;"><i class="fa fa-link" aria-hidden="true"></i></a>readFile&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3046;</h3>
+<p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;&#x306B;&#x306F;&#x3001;fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;<code>readFile</code>&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;
+<code>readFile</code>&#x95A2;&#x6570;&#x306B;&#x306F;&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30ED;&#x30FC;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30D1;&#x30B9;&#x3068;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x3060;&#x3051;&#x3092;&#x6E21;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;
+&#x3053;&#x306E;&#x3068;&#x304D;&#x306E;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x306E;&#x7B2C;2&#x5F15;&#x6570;&#x306F;<code>Buffer</code>&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, (err, file) =&gt; {
+    <span class="hljs-built_in">console</span>.log(file);
+});
+</code></pre>
+<p><code>sample.md</code>&#x3092;&#x5F15;&#x6570;&#x306B;&#x6E21;&#x3057;&#x305F;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+<code>Buffer</code>&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x30D0;&#x30A4;&#x30C8;&#x5217;&#x3068;&#x3057;&#x3066;&#x4FDD;&#x6301;&#x3057;&#x3066;&#x3044;&#x3066;&#x3001;&#x305D;&#x306E;&#x307E;&#x307E;<code>console.log</code>&#x95A2;&#x6570;&#x306B;&#x6E21;&#x3057;&#x3066;&#x3082;&#x4EBA;&#x9593;&#x304C;&#x8AAD;&#x3081;&#x308B;&#x6587;&#x5B57;&#x5217;&#x306B;&#x306F;&#x306A;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<pre><code class="lang-shell-session">$ node read-file-1a.js sample.md
+&lt;Buffer 23 20 73 61 6d 70 6c 65&gt;
+</code></pre>
+<p><code>Buffer</code>&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x304B;&#x3089;&#x6587;&#x5B57;&#x5217;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;&#x306B;&#x306F;&#x3001;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;
+<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30CA;&#x30EB;&#x306A;&#x5F15;&#x6570;&#x3068;&#x3057;&#x3066;&#x6587;&#x5B57;&#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308C;&#x307E;&#x3059;&#x304C;&#x3001;
+&#x4F55;&#x3082;&#x6307;&#x5B9A;&#x3057;&#x306A;&#x304B;&#x3063;&#x305F;&#x5834;&#x5408;&#x306F;&#x81EA;&#x52D5;&#x7684;&#x306B;UTF-8&#x3068;&#x3057;&#x3066;&#x5909;&#x63DB;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x306E;&#x4E2D;&#x3067;<code>toString</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3066;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4E2D;&#x8EAB;&#x3092;UTF-8&#x306E;&#x6587;&#x5B57;&#x5217;&#x3068;&#x3057;&#x3066;&#x8868;&#x793A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, (err, file) =&gt; {
+    <span class="hljs-built_in">console</span>.log(file.toString());
+});
+</code></pre>
+<p><code>sample.md</code>&#x3092;&#x5F15;&#x6570;&#x306B;&#x6E21;&#x3057;&#x305F;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-shell-session">$ node read-file-1b.js sample.md
+# sample
+</code></pre>
+<p>&#x3061;&#x306A;&#x307F;&#x306B;&#x3001;&#x6B21;&#x306E;&#x4F8B;&#x306E;&#x3088;&#x3046;&#x306B;<code>readFile</code>&#x95A2;&#x6570;&#x306E;&#x7B2C;2&#x5F15;&#x6570;&#x3067;&#x6587;&#x5B57;&#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x5F62;&#x5F0F;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x3068;&#x304D;&#x306E;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x306E;&#x7B2C;2&#x5F15;&#x6570;&#x306F;&#x3001;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x6587;&#x5B57;&#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3067;&#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x305F;&#x5F8C;&#x306E;&#x6587;&#x5B57;&#x5217;&#x304C;&#x6E21;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, <span class="hljs-string">&quot;utf8&quot;</span>, (err, file) =&gt; {
+    <span class="hljs-built_in">console</span>.log(file);
+});
+</code></pre>
+<p><code>sample.md</code>&#x3092;&#x5F15;&#x6570;&#x306B;&#x6E21;&#x3057;&#x305F;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-shell-session">$ node read-file-2.js sample.md
+# sample
+</code></pre>
+<h3 id="&#x30A8;&#x30E9;&#x30FC;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;"><a name="&#x30A8;&#x30E9;&#x30FC;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;" class="plugin-anchor" href="#&#x30A8;&#x30E9;&#x30FC;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30A8;&#x30E9;&#x30FC;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;</h3>
+<p>&#x5148;&#x8FF0;&#x306E;&#x3068;&#x304A;&#x308A;&#x3001;fs&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x306E;&#x7B2C;1&#x5F15;&#x6570;&#x306B;&#x306F;&#x5E38;&#x306B;&#x30A8;&#x30E9;&#x30FC;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x6E21;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x8AAD;&#x307F;&#x66F8;&#x304D;&#x306F;&#x5B58;&#x5728;&#x306E;&#x6709;&#x7121;&#x3084;&#x6A29;&#x9650;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x9055;&#x3044;&#x306A;&#x3069;&#x306B;&#x3088;&#x3063;&#x3066;&#x4F8B;&#x5916;&#x304C;&#x767A;&#x751F;&#x3057;&#x3084;&#x3059;&#x3044;&#x306E;&#x3067;&#x3001;&#x5FC5;&#x305A;&#x30A8;&#x30E9;&#x30FC;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;&#x51E6;&#x7406;&#x3092;&#x66F8;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x6B21;&#x306E;&#x4F8B;&#x306F;<code>err</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;<code>null</code>&#x307E;&#x305F;&#x306F;<code>undefined</code>&#x3067;&#x306F;&#x306A;&#x3044;&#x3053;&#x3068;&#x3060;&#x3051;&#x3092;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x306A;&#x30A8;&#x30E9;&#x30FC;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;&#x3067;&#x3059;&#x3002;
+&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x3066;&#x3044;&#x305F;&#x3068;&#x304D;&#x306B;&#x306F;&#x8868;&#x793A;&#x3057;&#x3001;<code>process.exit</code>&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3044;&#x308B;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x7570;&#x5E38;&#x7D42;&#x4E86;&#x3055;&#x305B;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, <span class="hljs-string">&quot;utf8&quot;</span>, (err, file) =&gt; {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.error(err);
+        process.exit(err.code);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-built_in">console</span>.log(file);
+});
+</code></pre>
+<p>&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3067;&#x3042;&#x308B;<code>notfound.md</code>&#x3092;&#x5F15;&#x6570;&#x306B;&#x6E21;&#x3059;&#x3068;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x3066;&#x7D42;&#x4E86;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-shell-session">$ node read-file-3.js notfound.md
+Error: ENOENT: no such file or directory, open &apos;notfound.md&apos;
+</code></pre>
+<p>&#x3053;&#x308C;&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3093;&#x3067;&#x6A19;&#x6E96;&#x51FA;&#x529B;&#x306B;&#x8868;&#x793A;&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../argument-parse/" class="navigation navigation-prev " aria-label="Previous page: コマンドライン引数を処理する">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../md-to-html/" class="navigation navigation-next " aria-label="Next page: MarkdownをHTMLに変換する">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"author":"laco","title":"ファイルを読み込む","level":"1.5.2.3","depth":3,"next":{"title":"MarkdownをHTMLに変換する","level":"1.5.2.4","depth":3,"path":"use-case/nodecli/md-to-html/README.md","ref":"use-case/nodecli/md-to-html/README.md","articles":[]},"previous":{"title":"コマンドライン引数を処理する","level":"1.5.2.2","depth":3,"path":"use-case/nodecli/argument-parse/README.md","ref":"use-case/nodecli/argument-parse/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","anchors","edit-link","canonical-link","ga","js-console","github-issue-feedback"],"root":"./source/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-issue-feedback":{"repo":"asciidwango/js-primer"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"canonical-link":{"baseURL":"https://asciidwango.github.io/js-primer"},"highlight":{},"ga":{"configuration":"auto","token":"UA-2184335-18"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit","base":"https://github.com/asciidwango/js-primer/edit/master/source/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.html.md","glossary":"GLOSSARY.md","summary":"README.md"},"variables":{"console":"<a class=\"gitbook-plugin-js-console\" aria-hidden=\"true\"></a>"},"title":"JavaScriptの入門書 #jsprimer","gitbook":">=3.0.0","description":"この書籍はES2015以降をベースとしたJavaScript入門書となる予定"},"file":{"path":"use-case/nodecli/read-file/README.md","mtime":"2017-08-17T14:12:40.227Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-17T14:15:31.912Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-console/console-ui.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-issue-feedback/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

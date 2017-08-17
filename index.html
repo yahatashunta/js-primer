@@ -1,0 +1,1011 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction · JavaScriptの入門書 #jsprimer</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    <link rel="canonical" href="https://asciidwango.github.io/js-primer/">
+
+<style>
+    /* deny access chapter */
+    .summary li.chapter > span {
+        cursor: not-allowed;
+        opacity: .3;
+    }
+
+    /* console ui */
+    .mirror-console-attach-button-wrapper {
+        margin-top: -1.275em;
+        margin-bottom: 1.275em
+    }
+
+    .mirror-console-wrapper {
+        margin-top: 1.275em;
+        margin-bottom: 1.275em
+    }
+</style>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    本書の読み方
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="intro/goal/">
+            
+                <a href="intro/goal/">
+            
+                    
+                    本書の目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="basic/">
+            
+                <a href="basic/">
+            
+                    
+                    第1部: 基礎文法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="basic/introduction/">
+            
+                <a href="basic/introduction/">
+            
+                    
+                    JavaScriptとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="basic/comments/">
+            
+                <a href="basic/comments/">
+            
+                    
+                    コメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="basic/variables/">
+            
+                <a href="basic/variables/">
+            
+                    
+                    変数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="basic/read-eval-print/">
+            
+                <a href="basic/read-eval-print/">
+            
+                    
+                    値の評価と表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="basic/data-type/">
+            
+                <a href="basic/data-type/">
+            
+                    
+                    データ型とリテラル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="basic/function-method/">
+            
+                <a href="basic/function-method/">
+            
+                    
+                    関数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="basic/statement-expression/">
+            
+                <a href="basic/statement-expression/">
+            
+                    
+                    文と式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="basic/condition/">
+            
+                <a href="basic/condition/">
+            
+                    
+                    条件分岐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="basic/loop/">
+            
+                <a href="basic/loop/">
+            
+                    
+                    ループと反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="basic/operator/">
+            
+                <a href="basic/operator/">
+            
+                    
+                    演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="basic/implicit-coercion/">
+            
+                <a href="basic/implicit-coercion/">
+            
+                    
+                    暗黙的な型変換
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="basic/object/">
+            
+                <a href="basic/object/">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="basic/array/">
+            
+                <a href="basic/array/">
+            
+                    
+                    配列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="basic/string/">
+            
+                <a href="basic/string/">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" >
+            
+                <span>
+            
+                    
+                    Number/Math
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="basic/wrapper-object/">
+            
+                <a href="basic/wrapper-object/">
+            
+                    
+                    ラッパーオブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" >
+            
+                <span>
+            
+                    
+                    関数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" >
+            
+                <span>
+            
+                    
+                    スコープ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" >
+            
+                <span>
+            
+                    
+                    Arrow Function
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" >
+            
+                <span>
+            
+                    
+                    分割代入（Destructuring assignment）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" >
+            
+                <span>
+            
+                    
+                    Spread Operator
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" >
+            
+                <span>
+            
+                    
+                    クラス
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" >
+            
+                <span>
+            
+                    
+                    Error/Throw
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" >
+            
+                <span>
+            
+                    
+                    Promise
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" >
+            
+                <span>
+            
+                    
+                    Generator/Iterable/Iterator
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" >
+            
+                <span>
+            
+                    
+                    ビルトインオブジェクト
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.22.1" data-path="basic/json/">
+            
+                <a href="basic/json/">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.2" >
+            
+                <span>
+            
+                    
+                    Date
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.3" >
+            
+                <span>
+            
+                    
+                    Map/WeakMap
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.4" >
+            
+                <span>
+            
+                    
+                    Set/WeakSet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.5" >
+            
+                <span>
+            
+                    
+                    Symbol
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" >
+            
+                <span>
+            
+                    
+                    Proxy/Reflect API
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" >
+            
+                <span>
+            
+                    
+                    非推奨の機能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" >
+            
+                <span>
+            
+                    
+                    ECMAScript策定プロセス
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="use-case/">
+            
+                <a href="use-case/">
+            
+                    
+                    第2部: 応用編（ユースケース）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="use-case/ajaxapp/">
+            
+                <a href="use-case/ajaxapp/">
+            
+                    
+                    Ajaxで通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="use-case/ajaxapp/entrypoint/">
+            
+                <a href="use-case/ajaxapp/entrypoint/">
+            
+                    
+                    エントリポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="use-case/ajaxapp/xhr/">
+            
+                <a href="use-case/ajaxapp/xhr/">
+            
+                    
+                    HTTP通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="use-case/ajaxapp/display/">
+            
+                <a href="use-case/ajaxapp/display/">
+            
+                    
+                    データを表示する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="use-case/ajaxapp/promise/">
+            
+                <a href="use-case/ajaxapp/promise/">
+            
+                    
+                    Promiseを活用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="use-case/nodecli/">
+            
+                <a href="use-case/nodecli/">
+            
+                    
+                    Node.jsでCLIアプリ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="use-case/nodecli/helloworld/">
+            
+                <a href="use-case/nodecli/helloworld/">
+            
+                    
+                    Node.jsでHello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="use-case/nodecli/argument-parse/">
+            
+                <a href="use-case/nodecli/argument-parse/">
+            
+                    
+                    コマンドライン引数を処理する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="use-case/nodecli/read-file/">
+            
+                <a href="use-case/nodecli/read-file/">
+            
+                    
+                    ファイルを読み込む
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="use-case/nodecli/md-to-html/">
+            
+                <a href="use-case/nodecli/md-to-html/">
+            
+                    
+                    MarkdownをHTMLに変換する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="use-case/nodecli/refactor-and-unittest/">
+            
+                <a href="use-case/nodecli/refactor-and-unittest/">
+            
+                    
+                    ユニットテストを記述する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    TODOアプリ
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></p>
+<p><link rel="stylesheet" type="text/css" href="./landing/css/style.css">
+<!-- Main container --></p>
+<div class="page-container">
+    <div class="row main" id="js-main">
+        <a href="https://github.com/asciidwango/js-primer" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:100;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+        <div class="col-sm-8">
+            <h2 class="mg-lg Landing-title" id="
+----------------wip-javascript&#x306E;&#x5165;&#x9580;&#x66F8;
+------------"><a name="
+----------------wip-javascript&#x306E;&#x5165;&#x9580;&#x66F8;
+------------" class="plugin-anchor" href="#%0A----------------wip-javascript&#x306E;&#x5165;&#x9580;&#x66F8;%0A------------"><i class="fa fa-link" aria-hidden="true"></i></a>
+                [WIP] JavaScript&#x306E;&#x5165;&#x9580;&#x66F8;
+            </h2>
+            <h3 class="mg-sm" id="
+----------------ecmascript-2017&#x6642;&#x4EE3;&#x306E;javascript&#x5165;&#x9580;&#x66F8;
+------------"><a name="
+----------------ecmascript-2017&#x6642;&#x4EE3;&#x306E;javascript&#x5165;&#x9580;&#x66F8;
+------------" class="plugin-anchor" href="#%0A----------------ecmascript-2017&#x6642;&#x4EE3;&#x306E;javascript&#x5165;&#x9580;&#x66F8;%0A------------"><i class="fa fa-link" aria-hidden="true"></i></a>
+                <span class="fa fa-book"></span>ECMAScript 2017&#x6642;&#x4EE3;&#x306E;JavaScript&#x5165;&#x9580;&#x66F8;
+            </h3>
+            <p class="mg-lg">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-hashtags="jsprimer" target="_blank">Tweet</a>
+                <!-- Place this tag where you want the button to render. -->
+                <a aria-label="Watch asciidwango/js-primer on GitHub" data-count-aria-label="# watchers on GitHub" data-count-api="/repos/asciidwango/js-primer#subscribers_count" data-count-href="/asciidwango/js-primer/watchers" data-style="mega" href="https://github.com/asciidwango/js-primer" class="github-button" target="_blank">Watch</a>
+                <a aria-label="Star asciidwango/js-primer on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/asciidwango/js-primer#stargazers_count" data-count-href="/asciidwango/js-primer/stargazers" data-style="mega" href="https://github.com/asciidwango/js-primer" class="github-button" target="_blank">Star</a>
+            </p>
+            <p class="mg-lg">
+                &#x3053;&#x308C;&#x304B;&#x3089;JavaScript&#x3092;&#x59CB;&#x3081;&#x308B;&#x4EBA;&#x304C;ES2015&#x4EE5;&#x964D;&#x3092;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x3057;&#x3066;&#x5B66;&#x3079;&#x308B;&#x672C;(&#x4E88;&#x5B9A;)<br>
+                &#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x3092;&#x3084;&#x3063;&#x305F;&#x3053;&#x3068;&#x304C;&#x3042;&#x308B;&#x304C;&#x3001;&#x4ECA;&#x306E;JavaScript&#x304C;&#x3088;&#x304F;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x4EBA;&#x304C;&#x3001;
+                &#x4ECA;&#x306E;JavaScript&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8AAD;&#x307F;&#x66F8;&#x304D;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3082;&#x306E;&#x3002;
+            </p>
+            <form action="//github.us13.list-manage.com/subscribe/post?u=fc41e11a2b9dc6f05350e0de0&amp;id=7ab1594ae8" method="post" id="js_mail_form" novalidate="" class="mail-form" target="_blank">
+                <h3 class="mg-sm" id="
+--------------------&#x66F4;&#x65B0;&#x60C5;&#x5831;&#x3092;&#x8CFC;&#x8AAD;
+----------------"><a name="
+--------------------&#x66F4;&#x65B0;&#x60C5;&#x5831;&#x3092;&#x8CFC;&#x8AAD;
+----------------" class="plugin-anchor" href="#%0A--------------------&#x66F4;&#x65B0;&#x60C5;&#x5831;&#x3092;&#x8CFC;&#x8AAD;%0A----------------"><i class="fa fa-link" aria-hidden="true"></i></a>
+                    <span class="fa fa-star"></span>&#x66F4;&#x65B0;&#x60C5;&#x5831;&#x3092;&#x8CFC;&#x8AAD;
+                </h3>
+                <p class="mg-lg">
+                    &#x3053;&#x306E;&#x672C;&#x306F;&#x73FE;&#x5728;&#x5B9F;&#x88C5;&#x4E2D;&#x3067;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x4E88;&#x544A;&#x306A;&#x3057;&#x306B;&#x5909;&#x66F4;&#x3055;&#x308C;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<br>
+                    &#x3053;&#x306E;&#x672C;&#x306E;&#x66F4;&#x65B0;&#x60C5;&#x5831;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x305F;&#x3044;&#x65B9;&#x306F;&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x767B;&#x9332;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x901A;&#x77E5;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308C;&#x307E;&#x3059;&#x3002;
+                </p>
+                <div class="form-group">
+                    <label>
+                        &#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;
+                    </label>
+                    <input id="email" class="form-control" name="EMAIL" type="email" required>
+                </div>
+                <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
+                    &#x767B;&#x9332;
+                </button>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <img src="landing/img/cover.png" alt="Cover Image" class="img-responsive hidden-xs">
+        </div>
+    </div>
+</div>
+
+<p><script async defer src="https://buttons.github.io/buttons.js"></script></p>
+<p><script async defer>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- Main End --></p>
+<!-- TOPページの実際の内容はlandingに書かれています -->
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"本書の読み方","level":"1.2","depth":1,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","anchors","edit-link","canonical-link","ga","js-console","github-issue-feedback"],"root":"./source/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-issue-feedback":{"repo":"asciidwango/js-primer"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"canonical-link":{"baseURL":"https://asciidwango.github.io/js-primer"},"highlight":{},"ga":{"configuration":"auto","token":"UA-2184335-18"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit","base":"https://github.com/asciidwango/js-primer/edit/master/source/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.html.md","glossary":"GLOSSARY.md","summary":"README.md"},"variables":{"console":"<a class=\"gitbook-plugin-js-console\" aria-hidden=\"true\"></a>"},"title":"JavaScriptの入門書 #jsprimer","gitbook":">=3.0.0","description":"この書籍はES2015以降をベースとしたJavaScript入門書となる予定"},"file":{"path":"index.html.md","mtime":"2017-08-17T14:12:40.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-17T14:15:31.912Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-js-console/console-ui.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github-issue-feedback/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

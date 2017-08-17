@@ -1,0 +1,1176 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MarkdownをHTMLに変換する · JavaScriptの入門書 #jsprimer</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../refactor-and-unittest/" />
+    
+    
+    <link rel="prev" href="../read-file/" />
+    
+
+    <link rel="canonical" href="https://asciidwango.github.io/js-primer/use-case/nodecli/md-to-html/">
+
+<style>
+    /* deny access chapter */
+    .summary li.chapter > span {
+        cursor: not-allowed;
+        opacity: .3;
+    }
+
+    /* console ui */
+    .mirror-console-attach-button-wrapper {
+        margin-top: -1.275em;
+        margin-bottom: 1.275em
+    }
+
+    .mirror-console-wrapper {
+        margin-top: 1.275em;
+        margin-bottom: 1.275em
+    }
+</style>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    本書の読み方
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../intro/goal/">
+            
+                <a href="../../../intro/goal/">
+            
+                    
+                    本書の目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../basic/">
+            
+                <a href="../../../basic/">
+            
+                    
+                    第1部: 基礎文法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../basic/introduction/">
+            
+                <a href="../../../basic/introduction/">
+            
+                    
+                    JavaScriptとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../basic/comments/">
+            
+                <a href="../../../basic/comments/">
+            
+                    
+                    コメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../basic/variables/">
+            
+                <a href="../../../basic/variables/">
+            
+                    
+                    変数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../basic/read-eval-print/">
+            
+                <a href="../../../basic/read-eval-print/">
+            
+                    
+                    値の評価と表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../basic/data-type/">
+            
+                <a href="../../../basic/data-type/">
+            
+                    
+                    データ型とリテラル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../../../basic/function-method/">
+            
+                <a href="../../../basic/function-method/">
+            
+                    
+                    関数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../../../basic/statement-expression/">
+            
+                <a href="../../../basic/statement-expression/">
+            
+                    
+                    文と式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../../../basic/condition/">
+            
+                <a href="../../../basic/condition/">
+            
+                    
+                    条件分岐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../../../basic/loop/">
+            
+                <a href="../../../basic/loop/">
+            
+                    
+                    ループと反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../../../basic/operator/">
+            
+                <a href="../../../basic/operator/">
+            
+                    
+                    演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../../../basic/implicit-coercion/">
+            
+                <a href="../../../basic/implicit-coercion/">
+            
+                    
+                    暗黙的な型変換
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../../../basic/object/">
+            
+                <a href="../../../basic/object/">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../../../basic/array/">
+            
+                <a href="../../../basic/array/">
+            
+                    
+                    配列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../../../basic/string/">
+            
+                <a href="../../../basic/string/">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" >
+            
+                <span>
+            
+                    
+                    Number/Math
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../../../basic/wrapper-object/">
+            
+                <a href="../../../basic/wrapper-object/">
+            
+                    
+                    ラッパーオブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" >
+            
+                <span>
+            
+                    
+                    関数
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" >
+            
+                <span>
+            
+                    
+                    スコープ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.2" >
+            
+                <span>
+            
+                    
+                    Arrow Function
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.3" >
+            
+                <span>
+            
+                    
+                    分割代入（Destructuring assignment）
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17.4" >
+            
+                <span>
+            
+                    
+                    Spread Operator
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" >
+            
+                <span>
+            
+                    
+                    クラス
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" >
+            
+                <span>
+            
+                    
+                    Error/Throw
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" >
+            
+                <span>
+            
+                    
+                    Promise
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" >
+            
+                <span>
+            
+                    
+                    Generator/Iterable/Iterator
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" >
+            
+                <span>
+            
+                    
+                    ビルトインオブジェクト
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.22.1" data-path="../../../basic/json/">
+            
+                <a href="../../../basic/json/">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.2" >
+            
+                <span>
+            
+                    
+                    Date
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.3" >
+            
+                <span>
+            
+                    
+                    Map/WeakMap
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.4" >
+            
+                <span>
+            
+                    
+                    Set/WeakSet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22.5" >
+            
+                <span>
+            
+                    
+                    Symbol
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" >
+            
+                <span>
+            
+                    
+                    Proxy/Reflect API
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" >
+            
+                <span>
+            
+                    
+                    非推奨の機能
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" >
+            
+                <span>
+            
+                    
+                    ECMAScript策定プロセス
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    第2部: 応用編（ユースケース）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../ajaxapp/">
+            
+                <a href="../../ajaxapp/">
+            
+                    
+                    Ajaxで通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../ajaxapp/entrypoint/">
+            
+                <a href="../../ajaxapp/entrypoint/">
+            
+                    
+                    エントリポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../ajaxapp/xhr/">
+            
+                <a href="../../ajaxapp/xhr/">
+            
+                    
+                    HTTP通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../../ajaxapp/display/">
+            
+                <a href="../../ajaxapp/display/">
+            
+                    
+                    データを表示する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="../../ajaxapp/promise/">
+            
+                <a href="../../ajaxapp/promise/">
+            
+                    
+                    Promiseを活用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Node.jsでCLIアプリ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../helloworld/">
+            
+                <a href="../helloworld/">
+            
+                    
+                    Node.jsでHello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../argument-parse/">
+            
+                <a href="../argument-parse/">
+            
+                    
+                    コマンドライン引数を処理する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../read-file/">
+            
+                <a href="../read-file/">
+            
+                    
+                    ファイルを読み込む
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MarkdownをHTMLに変換する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="../refactor-and-unittest/">
+            
+                <a href="../refactor-and-unittest/">
+            
+                    
+                    ユニットテストを記述する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    TODOアプリ
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >MarkdownをHTMLに変換する</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="markdown&#x3092;html&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;"><a name="markdown&#x3092;html&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;" class="plugin-anchor" href="#markdown&#x3092;html&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>Markdown&#x3092;HTML&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;</h1>
+<p>&#x524D;&#x306E;&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x306F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x3067;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x3001;&#x6A19;&#x6E96;&#x51FA;&#x529B;&#x306B;&#x8868;&#x793A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x6B21;&#x306F;&#x8AAD;&#x307F;&#x8FBC;&#x3093;&#x3060;Markdown&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;HTML&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3001;&#x305D;&#x306E;&#x7D50;&#x679C;&#x3092;&#x6A19;&#x6E96;&#x51FA;&#x529B;&#x306B;&#x8868;&#x793A;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="marked&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x4F7F;&#x3046;"><a name="marked&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x4F7F;&#x3046;" class="plugin-anchor" href="#marked&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x4F7F;&#x3046;"><i class="fa fa-link" aria-hidden="true"></i></a>marked&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x4F7F;&#x3046;</h2>
+<p>JavaScript&#x3067;Markdown&#x3092;HTML&#x3078;&#x5909;&#x63DB;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x4ECA;&#x56DE;&#x306F;<a href="https://github.com/chjj/marked" target="_blank">marked</a>&#x3068;&#x3044;&#x3046;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;
+marked&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306F;npm&#x3067;&#x914D;&#x5E03;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;commander&#x3068;&#x540C;&#x69D8;&#x306B;<code>npm install</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-shell-session">$ npm install --save marked
+</code></pre>
+<p>&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;&#x3089;&#x3001;Node.js&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x304B;&#x3089;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x307E;&#x3059;&#x3002;
+&#x524D;&#x306E;&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x6700;&#x5F8C;&#x3067;&#x66F8;&#x3044;&#x305F;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306B;&#x3001;marked&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x8AAD;&#x307F;&#x8FBC;&#x307F;&#x51E6;&#x7406;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> marked = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;marked&quot;</span>); <span class="hljs-comment">// marked&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x8AAD;&#x307F;&#x8FBC;&#x3080;</span>
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, <span class="hljs-string">&quot;utf8&quot;</span>, (err, file) =&gt; {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.error(err);
+        process.exit(err.code);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-built_in">console</span>.log(file);
+});
+</code></pre>
+<p>marked&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x3057;&#x305F;<code>marked</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306F;&#x3001;Markdown&#x6587;&#x5B57;&#x5217;&#x3092;&#x5F15;&#x6570;&#x306B;&#x53D6;&#x308A;HTML&#x6587;&#x5B57;&#x5217;&#x3092;&#x8FD4;&#x3059;&#x95A2;&#x6570;&#x3067;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;<code>readFile</code>&#x95A2;&#x6570;&#x3067;&#x8AAD;&#x307F;&#x8FBC;&#x3093;&#x3060;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x6587;&#x5B57;&#x5217;&#x3092;&#x5F15;&#x6570;&#x3068;&#x3057;&#x3066;&#x6E21;&#x305B;&#x3070;&#x3001;HTML&#x306B;&#x5909;&#x63DB;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> marked = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;marked&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, <span class="hljs-string">&quot;utf8&quot;</span>, (err, file) =&gt; {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.error(err);
+        process.exit(err.code);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">const</span> html = marked(file); <span class="hljs-comment">// HTML&#x6587;&#x5B57;&#x5217;&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;</span>
+    <span class="hljs-built_in">console</span>.log(html);
+});
+</code></pre>
+<h2 id="&#x5909;&#x63DB;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;"><a name="&#x5909;&#x63DB;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;" class="plugin-anchor" href="#&#x5909;&#x63DB;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5909;&#x63DB;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2>
+<p>marked&#x306B;&#x306F;Markdown&#x306E;<a href="https://github.com/chjj/marked#options-1" target="_blank">&#x5909;&#x63DB;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</a>&#x304C;&#x3042;&#x308A;&#x3001;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x8A2D;&#x5B9A;&#x306B;&#x3088;&#x3063;&#x3066;&#x5909;&#x63DB;&#x5F8C;&#x306E;HTML&#x304C;&#x5909;&#x5316;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3064;&#x3044;&#x3066;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x4E2D;&#x3067;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x6C7A;&#x3081;&#x3001;&#x3055;&#x3089;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x304B;&#x3089;&#x8A2D;&#x5B9A;&#x3092;&#x5207;&#x308A;&#x66FF;&#x3048;&#x3089;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x4ECA;&#x56DE;&#x6271;&#x3046;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x6B21;&#x306E;2&#x3064;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li>gfm</li>
+<li>sanitize</li>
+</ul>
+<h3 id="gfm&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;"><a name="gfm&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;" class="plugin-anchor" href="#gfm&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;"><i class="fa fa-link" aria-hidden="true"></i></a>gfm&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</h3>
+<p><code>gfm</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x3001;GitHub&#x306B;&#x304A;&#x3051;&#x308B;Markdown&#x306E;&#x4ED5;&#x69D8;(<a href="https://github.github.com/gfm/" target="_blank">GitHub Flavored Markdown</a>, GFM)&#x306B;&#x5408;&#x308F;&#x305B;&#x3066;&#x5909;&#x63DB;&#x3059;&#x308B;&#x304B;&#x3092;&#x6C7A;&#x3081;&#x308B;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x3059;&#x3002;
+marked&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;<code>true</code>&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;GFM&#x306F;&#x6A19;&#x6E96;&#x7684;&#x306A;Markdown&#x306B;&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;&#x62E1;&#x5F35;&#x3092;&#x52A0;&#x3048;&#x305F;&#x3082;&#x306E;&#x3067;&#x3001;&#x4EE3;&#x8868;&#x7684;&#x306A;&#x62E1;&#x5F35;&#x304C;URL&#x306E;&#x81EA;&#x52D5;&#x30EA;&#x30F3;&#x30AF;&#x5316;&#x3067;&#x3059;&#x3002;
+&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;Markdown&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7528;&#x610F;&#x3057;&#x3001;&#x5148;&#x307B;&#x3069;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3068;&#x3001;<code>gfm</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;<code>false</code>&#x306B;&#x3057;&#x305F;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x3067;&#x7D50;&#x679C;&#x306E;&#x9055;&#x3044;&#x3092;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-markdown"><span class="hljs-section"># &#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;</span>
+
+&#x3053;&#x308C;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;
+https://asciidwango.github.io/js-primer/
+
+<span class="hljs-bullet">- </span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;1
+<span class="hljs-bullet">- </span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;2
+</code></pre>
+<p><code>gfm</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x6709;&#x52B9;&#x306E;&#x3068;&#x304D;&#x306F;&#x3001;URL&#x306E;&#x6587;&#x5B57;&#x5217;&#x304C;&#x81EA;&#x52D5;&#x7684;&#x306B;<code>&lt;a&gt;</code>&#x30BF;&#x30B0;&#x306E;&#x30EA;&#x30F3;&#x30AF;&#x306B;&#x7F6E;&#x304D;&#x63DB;&#x308F;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;-&quot;</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x3053;&#x308C;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://asciidwango.github.io/js-primer/&quot;</span>&gt;</span>https://asciidwango.github.io/js-primer/<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>&#x4E00;&#x65B9;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;<code>gfm</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;<code>false</code>&#x306B;&#x3059;&#x308B;&#x3068;&#x3001;&#x5358;&#x306A;&#x308B;&#x6587;&#x5B57;&#x5217;&#x3068;&#x3057;&#x3066;&#x6271;&#x308F;&#x308C;&#x3001;&#x30EA;&#x30F3;&#x30AF;&#x306B;&#x306F;&#x7F6E;&#x304D;&#x63DB;&#x308F;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> marked = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;marked&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, <span class="hljs-string">&quot;utf8&quot;</span>, (err, file) =&gt; {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.error(err);
+        process.exit(err.code);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">const</span> html = marked(file, {
+        gfm: <span class="hljs-literal">false</span>
+    });
+    <span class="hljs-built_in">console</span>.log(html);
+});
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;-&quot;</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x3053;&#x308C;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;
+https://asciidwango.github.io/js-primer/<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>&#x81EA;&#x52D5;&#x30EA;&#x30F3;&#x30AF;&#x306E;&#x4ED6;&#x306B;&#x3082;&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;&#x62E1;&#x5F35;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x8A73;&#x3057;&#x304F;&#x306F;<a href="https://github.github.com/gfm/" target="_blank">GitHub Flavored Markdown</a>&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<h3 id="sanitize&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;"><a name="sanitize&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;" class="plugin-anchor" href="#sanitize&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;"><i class="fa fa-link" aria-hidden="true"></i></a>sanitize&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</h3>
+<p><code>sanitize</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x51FA;&#x529B;&#x3055;&#x308C;&#x308B;HTML&#x3092;&#x5B89;&#x5168;&#x306A;&#x5F62;&#x306B;&#x30B5;&#x30CB;&#x30BF;&#x30A4;&#x30BA;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x3059;&#x3002;
+<code>sanitize</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x6709;&#x52B9;&#x306A;&#x3068;&#x304D;&#x3001;Markdown&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E2D;&#x306B;&#x66F8;&#x304B;&#x308C;&#x305F;HTML&#x30BF;&#x30B0;&#x306F;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x3055;&#x308C;&#x3001;&#x5358;&#x306A;&#x308B;&#x6587;&#x5B57;&#x5217;&#x3068;&#x3057;&#x3066;&#x51FA;&#x529B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x4F8B;&#x3068;&#x3057;&#x3066;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;Markdown&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x63DB;&#x304C;<code>sanitize</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x3063;&#x3066;&#x3069;&#x3046;&#x5909;&#x308F;&#x308B;&#x304B;&#x3092;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-markdown"><span class="hljs-section"># &#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;</span>
+
+&#x3053;&#x308C;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;
+https://asciidwango.github.io/js-primer/
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span></span>&#x3053;&#x308C;&#x306F;HTML&#x3067;&#x3059;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+
+<span class="hljs-bullet">- </span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;1
+<span class="hljs-bullet">- </span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;2
+</code></pre>
+<p><code>sanitize</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x306F;<code>false</code>&#x306A;&#x306E;&#x3067;&#x3001;&#x4F55;&#x3082;&#x6307;&#x5B9A;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;Markdown&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x4E2D;&#x306E;HTML&#x306F;&#x305D;&#x306E;&#x307E;&#x307E;&#x51FA;&#x529B;&#x3055;&#x308C;&#x308B;HTML&#x4E2D;&#x3067;&#x3082;&#x30BF;&#x30B0;&#x3068;&#x3057;&#x3066;&#x6B8B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;-&quot;</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x3053;&#x308C;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;
+https://asciidwango.github.io/js-primer/<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x3053;&#x308C;&#x306F;HTML&#x3067;&#x3059;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>&#x3053;&#x3053;&#x3067;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;<code>sanitize</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x6709;&#x52B9;&#x306B;&#x3059;&#x308B;&#x3068;&#x3001;<code>&lt;</code>&#x3068;<code>&gt;</code>&#x304C;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x3055;&#x308C;&#x3066;HTML&#x30BF;&#x30B0;&#x3068;&#x3057;&#x3066;&#x6A5F;&#x80FD;&#x3057;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x81EA;&#x7531;&#x306A;HTML&#x3092;&#x66F8;&#x304B;&#x308C;&#x3066;&#x306F;&#x56F0;&#x308B;&#x5834;&#x5408;&#x306B;&#x6709;&#x7528;&#x306A;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> marked = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;marked&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+fs.readFile(filePath, <span class="hljs-string">&quot;utf8&quot;</span>, (err, file) =&gt; {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.error(err);
+        process.exit(err.code);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">const</span> html = marked(file, {
+        gfm: <span class="hljs-literal">false</span>,
+        sanitize: <span class="hljs-literal">true</span>
+    });
+    <span class="hljs-built_in">console</span>.log(html);
+});
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;-&quot;</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x3053;&#x308C;&#x306F;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x3059;&#x3002;
+https://asciidwango.github.io/js-primer/<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&amp;lt;p&amp;gt;&#x3053;&#x308C;&#x306F;HTML&#x3067;&#x3059;&amp;lt;/p&amp;gt;
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>&#x30B5;&#x30F3;&#x30D7;&#x30EB;2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<h3 id="&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x304B;&#x3089;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;"><a name="&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x304B;&#x3089;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;" class="plugin-anchor" href="#&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x304B;&#x3089;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x304B;&#x3089;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;</h3>
+<p>&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x5909;&#x63DB;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3064;&#x3044;&#x3066;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x3067;&#x5236;&#x5FA1;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>gfm</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;<code>--gfm</code>&#x3001;<code>sanitize</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;<code>--sanitize</code>&#x3068;<code>-S</code>&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x304B;&#x3089;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-js">program
+    .option(<span class="hljs-string">&quot;--gfm &lt;flag&gt;&quot;</span>, <span class="hljs-string">&quot;GFM&#x3092;&#x6709;&#x52B9;&#x306B;&#x3059;&#x308B;&quot;</span>)
+    .option(<span class="hljs-string">&quot;-S, --sanitize &lt;flag&gt;&quot;</span>, <span class="hljs-string">&quot;&#x30B5;&#x30CB;&#x30BF;&#x30A4;&#x30BA;&#x3092;&#x884C;&#x3046;&quot;</span>);
+
+program.parse(process.argv);
+</code></pre>
+<h3 id="&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x8A2D;&#x5B9A;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;"><a name="&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x8A2D;&#x5B9A;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;" class="plugin-anchor" href="#&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x8A2D;&#x5B9A;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x8A2D;&#x5B9A;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;</h3>
+<p>&#x6BCE;&#x56DE;&#x3059;&#x3079;&#x3066;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x660E;&#x793A;&#x7684;&#x306B;&#x5165;&#x529B;&#x3055;&#x305B;&#x308B;&#x306E;&#x306F;&#x4E0D;&#x4FBF;&#x306A;&#x306E;&#x3067;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x5909;&#x63DB;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x8A2D;&#x5B9A;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x4ECA;&#x56DE;&#x306F;<code>gfm</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;<code>true</code>&#x3001;<code>sanitize</code>&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;<code>false</code>&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;
+marked&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x8A2D;&#x5B9A;&#x3068;&#x540C;&#x3058;&#x3067;&#x3059;&#x304C;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x5074;&#x3067;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x8A2D;&#x5B9A;&#x3092;&#x6301;&#x3063;&#x3066;&#x304A;&#x304F;&#x3053;&#x3068;&#x3067;&#x3001;&#x5C06;&#x6765;&#x7684;&#x306B;marked&#x306E;&#x6319;&#x52D5;&#x304C;&#x5909;&#x308F;&#x3063;&#x305F;&#x3068;&#x304D;&#x306B;&#x3082;&#x5F71;&#x97FF;&#x3092;&#x53D7;&#x3051;&#x306B;&#x304F;&#x304F;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>marked&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x6E21;&#x3059;&#x5F62;&#x5F0F;&#x3067;&#x3059;&#x3002;
+&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x3092;&#x660E;&#x793A;&#x7684;&#x306A;&#x5024;&#x3067;&#x4E0A;&#x66F8;&#x304D;&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x306F;<code>Object.assign</code>&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x3002;(<a href="../../../basic/object/">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x30FB;&#x30DE;&#x30FC;&#x30B8;</a>&#x3092;&#x53C2;&#x7167;)
+&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8868;&#x73FE;&#x3057;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x3092;&#x30D1;&#x30FC;&#x30B9;&#x3057;&#x3066;&#x5F97;&#x3089;&#x308C;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4E0A;&#x66F8;&#x304D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> markedOptions = <span class="hljs-built_in">Object</span>.assign({}, {
+    gfm: <span class="hljs-literal">true</span>,
+    sanitize: <span class="hljs-literal">false</span>
+}, program);
+</code></pre>
+<p>&#x3042;&#x3068;&#x306F;<code>markedOptions</code>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304B;&#x3089;marked&#x306B;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x6E21;&#x3059;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;
+&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x5168;&#x4F53;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> program = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;commander&quot;</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;fs&quot;</span>);
+<span class="hljs-keyword">const</span> marked = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;marked&quot;</span>);
+
+program
+    .option(<span class="hljs-string">&quot;--gfm &lt;flag&gt;&quot;</span>, <span class="hljs-string">&quot;GFM&#x3092;&#x6709;&#x52B9;&#x306B;&#x3059;&#x308B;&quot;</span>)
+    .option(<span class="hljs-string">&quot;-S, --sanitize &lt;flag&gt;&quot;</span>, <span class="hljs-string">&quot;&#x30B5;&#x30CB;&#x30BF;&#x30A4;&#x30BA;&#x3092;&#x884C;&#x3046;&quot;</span>);
+
+program.parse(process.argv);
+<span class="hljs-keyword">const</span> filePath = program.args[<span class="hljs-number">0</span>];
+
+<span class="hljs-keyword">const</span> markedOptions = <span class="hljs-built_in">Object</span>.assign({}, {
+    gfm: <span class="hljs-literal">true</span>,
+    sanitize: <span class="hljs-literal">false</span>
+}, program);
+
+fs.readFile(filePath, <span class="hljs-string">&quot;utf8&quot;</span>, (err, file) =&gt; {
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.error(err);
+        process.exit(err.code);
+        <span class="hljs-keyword">return</span>;
+    }
+    <span class="hljs-keyword">const</span> html = marked(file, {
+        gfm: markedOptions.gfm,
+        sanitize: markedOptions.sanitize
+    });
+    <span class="hljs-built_in">console</span>.log(html);
+});
+</code></pre>
+<p>&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;Markdown&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5909;&#x63DB;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-shell-session">$ node main.js --gfm false sample.md
+$ node main.js -S true sample.md
+</code></pre>
+<p>&#x3053;&#x308C;&#x3067;Markdown&#x5909;&#x63DB;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x5F15;&#x6570;&#x3067;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x3057;&#x3066;&#x4E0E;&#x3048;&#x3089;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../read-file/" class="navigation navigation-prev " aria-label="Previous page: ファイルを読み込む">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../refactor-and-unittest/" class="navigation navigation-next " aria-label="Next page: ユニットテストを記述する">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"author":"laco","title":"MarkdownをHTMLに変換する","level":"1.5.2.4","depth":3,"next":{"title":"ユニットテストを記述する","level":"1.5.2.5","depth":3,"path":"use-case/nodecli/refactor-and-unittest/README.md","ref":"use-case/nodecli/refactor-and-unittest/README.md","articles":[]},"previous":{"title":"ファイルを読み込む","level":"1.5.2.3","depth":3,"path":"use-case/nodecli/read-file/README.md","ref":"use-case/nodecli/read-file/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","anchors","edit-link","canonical-link","ga","js-console","github-issue-feedback"],"root":"./source/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github-issue-feedback":{"repo":"asciidwango/js-primer"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"canonical-link":{"baseURL":"https://asciidwango.github.io/js-primer"},"highlight":{},"ga":{"configuration":"auto","token":"UA-2184335-18"},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit","base":"https://github.com/asciidwango/js-primer/edit/master/source/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.html.md","glossary":"GLOSSARY.md","summary":"README.md"},"variables":{"console":"<a class=\"gitbook-plugin-js-console\" aria-hidden=\"true\"></a>"},"title":"JavaScriptの入門書 #jsprimer","gitbook":">=3.0.0","description":"この書籍はES2015以降をベースとしたJavaScript入門書となる予定"},"file":{"path":"use-case/nodecli/md-to-html/README.md","mtime":"2017-08-17T14:12:40.223Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-17T14:15:31.912Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-js-console/console-ui.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github-issue-feedback/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
